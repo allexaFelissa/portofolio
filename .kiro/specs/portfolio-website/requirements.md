@@ -4,7 +4,7 @@
 
 This document specifies the requirements for a single-page portfolio website that recreates a provided reference design exactly. The site presents a personal/professional portfolio with a branded loading intro, floating pill navigation, hero section, about section, work-experience timeline, tech-stack showcase, projects gallery, and contact form. A persistent floating AI assistant lets visitors (primarily recruiters) ask questions about the portfolio owner, answering only from an owner-controlled, editable knowledge base.
 
-For this phase, all textual content and imagery are dummy placeholders structured for easy replacement later. The visual and interaction design must match the reference (minimalist white/near-white background, dark navy/black text, subtle gray borders and soft shadows, rounded UI, restrained micro-interactions and scroll reveals). The reference identity and reference projects are placeholders only; no real person's identity is copied.
+For this phase, all textual content and imagery are placeholders structured for easy replacement later. The placeholder Content_Store uses a Data Analyst / Data Scientist positioning consistent with the design reference (for example, a role of "Aspiring Data Analyst & Data Scientist"; capability badges such as "Data Analytics", "Python • SQL • Power BI", and "Machine Learning"; placeholder projects such as SIAGA, Shopee Sales Analytics, and PayFlow HR; and placeholder experience entries such as Software Engineer Intern, SASC Mentor, HIMTI Care Manager, and S-Class Participant). This placeholder profile is the intended dummy content and remains fully editable by the Owner. The visual and interaction design must match the reference (minimalist white/near-white background, near-black text with pure black accents, subtle gray borders and soft shadows, rounded UI, restrained micro-interactions and scroll reveals).
 
 ## Glossary
 
@@ -15,14 +15,15 @@ For this phase, all textual content and imagery are dummy placeholders structure
 - **About_Section**: The section presenting the owner's bio, approach, and personal details.
 - **Experience_Section**: The work-experience section with a vertical timeline and experience cards.
 - **Marquee_Banner**: The large horizontally scrolling text band shown between sections.
-- **Tech_Stack_Section**: The section listing frontend and backend technologies as icon cards.
+- **Tech_Stack_Section**: The Skills & Expertise section listing Hard Skills category cards and Soft Skills chips.
 - **Projects_Section**: The section presenting selected project cards and a view-more control.
 - **Contact_Section**: The section containing the contact form.
 - **Contact_Form**: The form within the Contact_Section used to send a message.
 - **Theme_Controller**: The component managing light and dark theme state and persistence.
 - **AI_Assistant**: The chat feature answering visitor questions about the owner.
 - **AI_Assistant_Button**: The persistent floating circular button that opens the AI_Assistant.
-- **AI_Assistant_Panel**: The chat panel UI shown when the AI_Assistant is open.
+- **AI_Assistant_Panel**: The centered modal chat panel UI shown, with the page behind it blurred, when the AI_Assistant is open.
+- **Project_Detail_Modal**: The centered modal that displays a selected project's full details, with the page behind it blurred, shared with the AI_Assistant_Panel modal + backdrop-blur pattern.
 - **Knowledge_Base**: The owner-editable data source containing verified facts the AI_Assistant may use to answer questions.
 - **Content_Store**: The editable data source containing all placeholder text and image references rendered across the Portfolio_Site sections.
 - **Scroll_Reveal**: The scroll-triggered entrance animation applied to elements as they enter the viewport.
@@ -88,7 +89,7 @@ For this phase, all textual content and imagery are dummy placeholders structure
 2. IF the eyebrow label or heading is missing from the Content_Store, THEN THE About_Section SHALL omit only the missing element and render the remaining available elements.
 3. THE About_Section SHALL display a portrait image card on the left and two text blocks labeled "Who Am I" and "My Approach" on the right, sourced from the Content_Store.
 4. IF the portrait image fails to load, THEN THE About_Section SHALL display a placeholder image in its position and continue rendering the text blocks and personal details.
-5. THE About_Section SHALL display a "Personal Details" information grid containing exactly five labeled fields in the order Name, Position, Email, Phone, Location, sourced from the Content_Store.
+5. THE About_Section SHALL display a "Personal Details" information grid containing exactly four labeled fields in the order Name, Place of Birth, Phone, Education, sourced from the Content_Store.
 6. IF a Personal Details field value is missing from the Content_Store, THEN THE About_Section SHALL omit that field from the grid and render the remaining available fields.
 7. WHEN the top edge of the About_Section scrolls to within the visible viewport bounds, THE About_Section SHALL play a Scroll_Reveal entrance animation that starts within 100 milliseconds and completes within 1000 milliseconds, playing only once per page load.
 8. WHERE the Reduced_Motion_Preference is enabled, THE About_Section SHALL render its content in the final static state without the Scroll_Reveal animation.
@@ -99,7 +100,7 @@ For this phase, all textual content and imagery are dummy placeholders structure
 
 #### Acceptance Criteria
 
-1. THE Experience_Section SHALL display a "CAREER PATH" eyebrow label and a "Work Experience" heading.
+1. THE Experience_Section SHALL display an "experience" eyebrow label and a "What I've Done" heading.
 2. WHILE at least one experience entry exists in the Content_Store, THE Experience_Section SHALL display a central vertical timeline with one circular marker per experience entry, supporting 1 to 20 entries.
 3. WHEN rendering experience entries on viewports 768 pixels wide or wider, THE Experience_Section SHALL display experience cards in an alternating left/right layout, each containing a year, role, company, a description of up to 500 characters, and 0 to 10 technology pill tags sourced from the Content_Store.
 4. WHILE rendering on viewports narrower than 768 pixels, THE Experience_Section SHALL display all experience cards in a single-column layout aligned to one side of the timeline.
@@ -119,18 +120,20 @@ For this phase, all textual content and imagery are dummy placeholders structure
 4. WHERE the Reduced_Motion_Preference is enabled, THE Marquee_Banner SHALL display the complete text string statically without horizontal scrolling motion.
 5. IF the text string length exceeds the visible viewport width, THEN THE Marquee_Banner SHALL truncate the visible display to the viewport width without altering the scrolling loop content.
 
-### Requirement 7: Tech Stack Section
+### Requirement 7: Skills & Expertise Section
 
-**User Story:** As a Visitor, I want a tech-stack showcase, so that I can see the technologies the owner uses.
+**User Story:** As a Visitor, I want a skills and expertise showcase, so that I can see the hard and soft skills the owner has.
 
 #### Acceptance Criteria
 
-1. THE Tech_Stack_Section SHALL display a "SKILLS & TOOLS" eyebrow label and a "My Tech Stack" heading.
-2. THE Tech_Stack_Section SHALL display a "Frontend" category and a "Backend" category, each containing between 1 and 30 technology icon cards sourced from the Content_Store.
-3. WHEN a Visitor's pointer enters a technology icon card, THE Tech_Stack_Section SHALL translate that card upward by 4 to 12 pixels over a transition of 100 to 300 milliseconds, and SHALL return the card to its original position within 100 to 300 milliseconds when the pointer leaves the card.
-4. WHEN at least 20 percent of the Tech_Stack_Section enters the viewport, THE Tech_Stack_Section SHALL play a Scroll_Reveal entrance animation with a duration between 200 and 1000 milliseconds, and SHALL play the entrance animation only once per page load.
-5. IF a category in the Content_Store contains zero technology icon cards, THEN THE Tech_Stack_Section SHALL omit that category from display without rendering an empty category container.
-6. IF the Content_Store is unavailable when the Tech_Stack_Section renders, THEN THE Tech_Stack_Section SHALL display a placeholder state indicating the tech stack content could not be loaded, and SHALL preserve the eyebrow label and heading.
+1. THE Tech_Stack_Section SHALL display a "SKILLS & TOOLS" eyebrow label and a "Skills & Expertise" heading.
+2. THE Tech_Stack_Section SHALL display a "Hard Skills" group rendered as category cards sourced from the Content_Store, supporting 1 to 12 category cards, where each category card contains an icon, a category title, a short description, and 1 to 15 skill pill tags.
+3. THE Tech_Stack_Section SHALL display a "Soft Skills" group rendered as a row of pill chips sourced from the Content_Store, supporting 1 to 20 chips, where each chip contains a small dot marker and a label.
+4. WHEN a Visitor's pointer enters a Hard Skills category card, THE Tech_Stack_Section SHALL translate that card upward by 4 to 12 pixels over a transition of 100 to 300 milliseconds, and SHALL return the card to its original position within 100 to 300 milliseconds when the pointer leaves the card.
+5. WHEN a Visitor's pointer enters a Soft Skills chip, THE Tech_Stack_Section SHALL darken that chip's border relative to its non-hovered state.
+6. WHEN at least 20 percent of the Tech_Stack_Section enters the viewport, THE Tech_Stack_Section SHALL play a Scroll_Reveal entrance animation with a duration between 200 and 1000 milliseconds, and SHALL play the entrance animation only once per page load.
+7. IF a Hard Skills category in the Content_Store contains zero skill pill tags, THEN THE Tech_Stack_Section SHALL omit that category card from display without rendering an empty category card.
+8. IF the Content_Store is unavailable when the Tech_Stack_Section renders, THEN THE Tech_Stack_Section SHALL display a placeholder state indicating the skills content could not be loaded, and SHALL preserve the eyebrow label and heading.
 
 ### Requirement 8: Projects Section
 
@@ -146,6 +149,8 @@ For this phase, all textual content and imagery are dummy placeholders structure
 6. THE Projects_Section SHALL render project thumbnail images in their original colors without applying a monochrome filter.
 7. IF the Content_Store returns zero projects, THEN THE Projects_Section SHALL display an empty-state message indicating that no projects are available and SHALL NOT render any project cards or the "VIEW MORE PROJECT ↗" button.
 8. IF a project thumbnail image fails to load, THEN THE Projects_Section SHALL display a placeholder image in that thumbnail's position and SHALL continue to display the card's title, description, and "VIEW DETAILS" button.
+9. WHEN a Visitor selects a project card's "VIEW DETAILS" button, THE Projects_Section SHALL open a Project_Detail_Modal centered in the viewport with a backdrop blur applied to the page content behind it, displaying that project's title, description, and details sourced from the Content_Store, and providing a close control.
+10. WHILE the Project_Detail_Modal is open, THE Projects_Section SHALL close the Project_Detail_Modal when the Visitor selects the close control or presses the Escape key.
 
 ### Requirement 9: Contact Form
 
@@ -181,10 +186,10 @@ For this phase, all textual content and imagery are dummy placeholders structure
 
 #### Acceptance Criteria
 
-1. THE AI_Assistant_Button SHALL display as a dark navy circular button, 56 to 64 pixels in diameter, containing a chat icon, positioned in the bottom-right of the viewport with a margin of 16 to 24 pixels from the bottom and right edges.
+1. THE AI_Assistant_Button SHALL display as a near-black circular button, 56 to 64 pixels in diameter, containing a chat icon, positioned in the bottom-right of the viewport with a margin of 16 to 24 pixels from the bottom and right edges.
 2. THE AI_Assistant_Button SHALL remain fixed in the bottom-right of the viewport and rendered above all other page content at all scroll positions.
 3. WHEN a Visitor hovers over the AI_Assistant_Button, THE AI_Assistant_Button SHALL scale to between 105% and 115% of its default size within 300 milliseconds.
-4. WHEN a Visitor selects the AI_Assistant_Button, THE AI_Assistant SHALL open the AI_Assistant_Panel within 300 milliseconds.
+4. WHEN a Visitor selects the AI_Assistant_Button, THE AI_Assistant SHALL open the AI_Assistant_Panel as a modal centered in the viewport within 300 milliseconds.
 5. WHEN a Visitor focuses the AI_Assistant_Button using a keyboard, THE AI_Assistant_Button SHALL display a visible focus indicator with a minimum contrast ratio of 3:1 against adjacent colors and a minimum thickness of 2 pixels.
 6. IF the AI_Assistant_Panel fails to open within 300 milliseconds of the AI_Assistant_Button being selected, THEN THE AI_Assistant SHALL display an error message indicating the assistant is unavailable and retain the AI_Assistant_Button in its default state.
 
@@ -194,10 +199,10 @@ For this phase, all textual content and imagery are dummy placeholders structure
 
 #### Acceptance Criteria
 
-1. WHEN the AI_Assistant_Panel opens, THE AI_Assistant_Panel SHALL apply a backdrop blur behind the panel without applying a fully opaque black overlay.
+1. WHEN the AI_Assistant_Panel opens, THE AI_Assistant_Panel SHALL render centered in the viewport with a backdrop blur applied to the page content behind it, without applying a fully opaque black overlay.
 2. THE AI_Assistant_Panel SHALL display a header containing a green online status dot, the assistant name, and a close control.
 3. WHEN the AI_Assistant_Panel opens, THE AI_Assistant_Panel SHALL display an initial assistant message within 1 second of the panel becoming visible.
-4. THE AI_Assistant_Panel SHALL display Visitor messages as dark navy bubbles aligned to the right, each with a timestamp, and assistant messages as light bubbles aligned to the left, each with a timestamp.
+4. THE AI_Assistant_Panel SHALL display Visitor messages as dark near-black bubbles aligned to the right, each with a timestamp, and assistant messages as light bubbles aligned to the left, each with a timestamp.
 5. WHILE the AI_Assistant is generating a response, THE AI_Assistant_Panel SHALL display a three-dot typing indicator and SHALL remove the indicator when the response is displayed or a failure is indicated.
 6. THE AI_Assistant_Panel SHALL display a composer containing a rounded text input that accepts between 1 and 2000 characters and a dark send control.
 7. WHEN the message list exceeds the visible area, THE AI_Assistant_Panel SHALL make the message list scrollable.
@@ -230,7 +235,7 @@ For this phase, all textual content and imagery are dummy placeholders structure
 2. THE Content_Store SHALL contain placeholder text and placeholder image references for every section rendered by the Portfolio_Site, such that no rendered section resolves its content from a source other than the Content_Store.
 3. WHEN the Content_Store is updated and the Portfolio_Site is reloaded, THE Portfolio_Site SHALL render the updated text and image references while producing identical layout structure and component code to the pre-update state.
 4. IF a section referenced by the Portfolio_Site has no corresponding entry in the Content_Store, THEN THE Portfolio_Site SHALL render a visible placeholder indicator for that section and SHALL continue rendering all remaining sections without failure.
-5. THE Content_Store SHALL NOT contain the reference person's real name, contact details, or biographical identity information, containing only non-identifying placeholder values.
+5. THE Content_Store SHALL contain only content that the Owner intends to publish, using the Data Analyst / Data Scientist placeholder profile from the design reference, and SHALL remain fully editable by the Owner, excluding any real private individual's sensitive personal contact information that the Owner has not chosen to make public.
 
 ### Requirement 15: Responsive Layout
 
@@ -240,7 +245,7 @@ For this phase, all textual content and imagery are dummy placeholders structure
 
 1. WHERE the viewport width is 1024 pixels or greater, THE Portfolio_Site SHALL render the layout composition matching the reference design without horizontal scrolling.
 2. WHERE the viewport width is from 768 pixels to 1023 pixels, THE Portfolio_Site SHALL adapt each section to fit within the available width without horizontal scrolling and without content overflowing its container.
-3. WHERE the viewport width is from 320 pixels to 767 pixels, THE Hero_Section SHALL stack its content vertically in a single column, THE Projects_Section SHALL render project cards in a single column, THE Tech_Stack_Section SHALL wrap technology cards so that no card overflows the viewport width, and THE Experience_Section SHALL render the timeline left-aligned.
+3. WHERE the viewport width is from 320 pixels to 767 pixels, THE Hero_Section SHALL stack its content vertically in a single column, THE Projects_Section SHALL render project cards in a single column, THE Tech_Stack_Section SHALL wrap Hard Skills category cards and Soft Skills chips so that no card or chip overflows the viewport width, and THE Experience_Section SHALL render the timeline left-aligned.
 4. WHERE the viewport width is from 320 pixels to 767 pixels, THE AI_Assistant_Panel SHALL render as a bottom-sheet or modal occupying at least 90 percent of the viewport height.
 5. IF the viewport width transitions across a breakpoint boundary at 768 pixels or 1024 pixels, THEN THE Portfolio_Site SHALL apply the layout for the new viewport range within 500 milliseconds without loss of the visitor's current scroll position.
 
@@ -275,8 +280,8 @@ For this phase, all textual content and imagery are dummy placeholders structure
 
 #### Acceptance Criteria
 
-1. THE Portfolio_Site SHALL define Design_Tokens for background (#FFFFFF), primary dark/navy (#0B1220–#111827), body text (#4B5563), muted text (#6B7280), border (#E5E7EB), and light surface (#F8FAFC).
+1. THE Portfolio_Site SHALL define Design_Tokens for background (#FFFFFF), primary dark (#111315–#111827, near-black) with pure black (#000000) permitted for buttons, primary text, and timeline/status markers, body text (#4B5563), muted text (#6B7280), border (#ECEEF1–#E5E7EB), and alternating light surface (#FAFAFB).
 2. THE Design_Tokens SHALL define an AI online status indicator color of bright green (#22C55E–#4ADE80).
-3. THE Design_Tokens SHALL define border-radius values for the Navbar pill, buttons (6–10px), cards (10–16px), the AI_Assistant_Panel (14–20px), and chat bubbles (10–14px).
-4. THE Portfolio_Site SHALL apply a geometric sans-serif typeface with headings at font-weight 700, body text at font-weight 500, and uppercase eyebrow labels at font-size 11–13px with letter-spacing 0.05em–0.1em.
+3. THE Design_Tokens SHALL define border-radius values for the Navbar pill, buttons (6–10px), cards (10–24px), the AI_Assistant_Panel (14–20px), and chat bubbles (10–14px).
+4. THE Portfolio_Site SHALL apply the "Plus Jakarta Sans" typeface with "Inter" as a fallback, headings at font-weight 700–800, body text at font-weight 400–500, and uppercase eyebrow labels at font-size 11px with letter-spacing 0.1em–0.2em.
 5. WHEN a surface is elevated above the base background, THE Portfolio_Site SHALL apply a shadow with opacity between 0.04 and 0.12 and blur radius between 8px and 24px.

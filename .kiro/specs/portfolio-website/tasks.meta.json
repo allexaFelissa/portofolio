@@ -1,0 +1,330 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Initialize Next.js App Router + TypeScript project and directory structure": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897088082
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897109123
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789899701603
+      }
+    ],
+    "1.2 Install and configure Tailwind CSS with the reference Design_Tokens": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897088607
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789899711302
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789900416032
+      }
+    ],
+    "1.3 Configure Plus Jakarta Sans via next/font with Inter fallback and typography scale": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897088946
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789899712803
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789900777944
+      }
+    ],
+    "1.4 Set up the test harness (Vitest + fast-check + React Testing Library + jest-axe)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897089298
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789899713873
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789900417093
+      }
+    ],
+    "2.1 Define content interfaces in `src/content/types.ts`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897089683
+      },
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789900786012
+      }
+    ],
+    "2.2 Create the placeholder Content_Store in `src/content/site-content.ts`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897090036
+      }
+    ],
+    "2.3 Create the Knowledge_Base in `src/content/knowledge-base.ts`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897090271
+      }
+    ],
+    "3.1 Implement `src/lib/validation.ts` (email + contact field validation + chat-input guard)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897090550
+      }
+    ],
+    "3.5 Implement `src/lib/scroll-spy.ts` (active-section selection, pure)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897090781
+      }
+    ],
+    "3.7 Implement `src/lib/theme.ts` (theme resolution + persistence helpers)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897091050
+      }
+    ],
+    "3.9 Implement content mapping helpers for section rendering (pure)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897091288
+      }
+    ],
+    "3.10 Implement `src/lib/ai/prompt.ts` grounded-prompt builder (pure)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897091515
+      }
+    ],
+    "4. Checkpoint - pure logic verified": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897091790
+      }
+    ],
+    "5.1 Implement `Modal` primitive (backdrop blur, focus trap, Escape, focus restore)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897092123
+      }
+    ],
+    "5.3 Implement Button, Card, SectionHeading, Pill/Chip, StatusDot primitives": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897092339
+      }
+    ],
+    "5.4 Implement `ScrollReveal` primitive (IntersectionObserver, reduced-motion aware)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897092541
+      }
+    ],
+    "6.1 Implement `useReducedMotion` and `useScrollReveal`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897092733
+      }
+    ],
+    "6.2 Implement `useScrollSpy` and `useFocusTrap`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897092940
+      }
+    ],
+    "6.3 Implement `useTheme` + `ThemeProvider`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897093141
+      }
+    ],
+    "7.1 Implement `LoadingScreen`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897093312
+      }
+    ],
+    "7.3 Implement `ThemeToggle` and `FloatingNavbar` (scroll-spy wired)": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897093474
+      }
+    ],
+    "8.1 Implement `Hero` wired to Content_Store": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897093697
+      }
+    ],
+    "9.1 Implement `MarqueeBanner`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897093920
+      }
+    ],
+    "10.1 Implement `About` wired to Content_Store": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897094139
+      }
+    ],
+    "11.1 Implement `Experience` wired to Content_Store": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897094337
+      }
+    ],
+    "12.1 Implement `Skills` wired to Content_Store": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897094574
+      }
+    ],
+    "13.1 Implement `Projects` wired to Content_Store": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897094819
+      }
+    ],
+    "13.2 Implement `Project_Detail_Modal` using the shared Modal primitive": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897095042
+      }
+    ],
+    "14. Checkpoint - sections render from Content_Store": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897095247
+      }
+    ],
+    "15.1 Implement `Contact` section and form with validation states": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897095444
+      }
+    ],
+    "16.1 Implement `AiAssistantButton`": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897095741
+      }
+    ],
+    "16.2 Implement `AiAssistantModal` using the shared Modal primitive": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897095927
+      }
+    ],
+    "17.1 Implement `AiProvider` interface + `GeminiProvider` and `/api/chat` route": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897096125
+      }
+    ],
+    "17.3 Implement `MailProvider` interface + provider impl and `/api/contact` route": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897096282
+      }
+    ],
+    "18. Checkpoint - full feature behavior verified": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897096441
+      }
+    ],
+    "19.1 Apply semantic structure, focus indicators, and image alt handling site-wide": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897096609
+      }
+    ],
+    "19.3 Implement responsive breakpoints and reduced-motion final-state rendering": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897096775
+      }
+    ],
+    "20.1 Add deployment config files and env var documentation": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897096941
+      }
+    ],
+    "21.1 Compose `app/page.tsx` and `app/layout.tsx` and verify the production build": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789897097105
+      }
+    ],
+    "1. Scaffold project, theme tokens, fonts, and test harness": [
+      {
+        "executionId": "9ccf9f16-7aea-410c-8e77-cbfedcdc8b25",
+        "chatSessionId": "sess_05915bb4-417b-4428-a77c-be9f4f77f1d2",
+        "timestamp": 1789900778154
+      }
+    ]
+  }
+}
