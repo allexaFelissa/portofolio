@@ -25,7 +25,7 @@ export function Hero({ content = siteContent.hero }: HeroProps) {
     </div>
     <div className="relative mx-auto w-full max-w-md py-8">
       <div className="aspect-square overflow-hidden rounded-full border-4 border-bg bg-surface shadow-card-hover">{portraitSrc ? <img src={portraitSrc} alt={content.portrait?.alt ?? ""} className="size-full object-cover" onError={() => setPortraitSrc("/placeholder-portrait.svg")} /> : <div aria-label="Portrait unavailable" className="grid size-full place-items-center text-sm text-muted">Portrait unavailable</div>}</div>
-      {badges.length === 3 && <div className="absolute -bottom-3 -left-2 flex flex-col gap-2 sm:-left-7">{badges.map((badge, index) => <span key={badge} style={{ animationDelay: `${index * 120}ms` }} className="animate-[pulse_1s_ease-out_both] rounded-card border border-border bg-bg/90 px-4 py-2 text-xs font-bold text-primary shadow-badge backdrop-blur-sm motion-reduce:animate-none">{badge}</span>)}</div>}
+      {badges.length === 3 && <div className="absolute -bottom-3 -left-2 flex flex-col gap-2 sm:-left-7">{badges.map((badge, index) => <span key={`${badge}-${index}`} style={{ animationDelay: `${index * 120}ms` }} className="animate-[pulse_1s_ease-out_both] rounded-card border border-border bg-bg/90 px-4 py-2 text-xs font-bold text-primary shadow-badge backdrop-blur-sm motion-reduce:animate-none">{badge}</span>)}</div>}
     </div>
   </section>;
 }

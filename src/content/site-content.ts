@@ -98,6 +98,7 @@ export const siteContent: SiteContent = {
       detailBody: "Built during a software engineering internship to support payroll operations across a corporate group.",
       role: "Software Engineer Intern",
       stack: ["Laravel", "PHP", "MySQL", "Dashboarding"],
+      category: "Data",
     },
     {
       id: "siaga",
@@ -107,6 +108,7 @@ export const siteContent: SiteContent = {
       detailBody: "A Ristek UI Datathon project that placed fourth among more than 200 teams.",
       role: "Data Science Team Member",
       stack: ["Python", "Machine Learning", "Data Analysis"],
+      category: "AI",
     },
     {
       id: "shopee-sales-analytics",
@@ -116,6 +118,7 @@ export const siteContent: SiteContent = {
       detailBody: "Analyzed category engagement momentum and translated findings into an interactive business intelligence dashboard.",
       role: "Data Analyst",
       stack: ["Python", "SQL", "Power BI", "DAX"],
+      category: "Data",
     },
   ],
   sectionHeadings: {

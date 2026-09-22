@@ -178,119 +178,119 @@ Tasks marked with `*` are optional test sub-tasks and can be skipped for a faste
     - **Property 10: Marquee visibility tracks content**
     - **Validates: Requirements 6.2**
 
-- [ ] 10. Implement About section
-  - [~] 10.1 Implement `About` wired to Content_Store
+- [x] 10. Implement About section
+  - [x] 10.1 Implement `About` wired to Content_Store
     - Eyebrow + centered heading (omit missing); portrait card left with `onError` placeholder fallback; "Who Am I"/"My Approach" text blocks right; Personal Details grid with fields in fixed order (Name, Place of Birth, Phone, Education), omitting absent fields; scroll-reveal once per load; static under reduced motion
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8; Property 6_
 
-  - [ ]* 10.2 Write property test for Personal Details omission/order
+  - [x]* 10.2 Write property test for Personal Details omission/order
     - **Property 6: Personal Details omits absent fields in fixed order**
     - **Validates: Requirements 4.5, 4.6**
 
-- [ ] 11. Implement Experience timeline
-  - [~] 11.1 Implement `Experience` wired to Content_Store
+- [x] 11. Implement Experience timeline
+  - [x] 11.1 Implement `Experience` wired to Content_Store
     - "experience" eyebrow + "What I've Done" heading; central vertical timeline, one marker per valid entry (1–20); alternating left/right cards ≥768px, single-column left-aligned <768px; each card year/role/company/description(≤500 chars)/0–10 tech pills; staggered reveal 100–200ms; omit entries missing year/role/company; empty list shows "no experience" message while keeping eyebrow/heading
     - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7; Property 7_
 
-  - [ ]* 11.2 Write property test for experience filtering
+  - [x]* 11.2 Write property test for experience filtering
     - **Property 7: Experience filters invalid entries**
     - **Validates: Requirements 5.2, 5.7**
 
-- [ ] 12. Implement Skills section
-  - [~] 12.1 Implement `Skills` wired to Content_Store
+- [x] 12. Implement Skills section
+  - [x] 12.1 Implement `Skills` wired to Content_Store
     - "SKILLS & TOOLS" eyebrow + "Skills & Expertise" heading; Hard Skills category cards (1–12; icon/title/description/1–15 pills) with 4–12px hover lift (100–300ms) returning on leave; Soft Skills chips (1–20; dot+label) with border-darken hover; reveal once when ≥20% visible; omit categories with zero pills; unavailable content shows placeholder while keeping eyebrow/heading
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8; Property 8_
 
-  - [ ]* 12.2 Write property test for skills empty-category omission
+  - [x]* 12.2 Write property test for skills empty-category omission
     - **Property 8: Skills omits empty categories**
     - **Validates: Requirements 7.7**
 
-- [ ] 13. Implement Projects section + Project_Detail_Modal
-  - [~] 13.1 Implement `Projects` wired to Content_Store
+- [x] 13. Implement Projects section + Project_Detail_Modal
+  - [x] 13.1 Implement `Projects` wired to Content_Store
     - "PORTFOLIO" eyebrow + "Selected Works" heading; responsive grid (3-col ≥1024, 2-col 640–1023, 1-col <640); each card thumbnail(original colors)/title/description/"VIEW DETAILS"; "VIEW MORE PROJECT ↗" button; hover scales thumbnail 103–110%, lifts 4–12px, +≥8px shadow blur; thumbnail `onError` placeholder keeping title/description/button; zero projects → empty message, no cards and no VIEW MORE
     - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8; Property 9_
 
-  - [~] 13.2 Implement `Project_Detail_Modal` using the shared Modal primitive
+  - [x] 13.2 Implement `Project_Detail_Modal` using the shared Modal primitive
     - VIEW DETAILS opens a centered modal (backdrop blur) showing title/description/details from Content_Store with a close control; close via control or Escape
     - _Requirements: 8.9, 8.10_
 
-  - [ ]* 13.3 Write property test for projects empty-state consistency
+  - [x]* 13.3 Write property test for projects empty-state consistency
     - **Property 9: Projects empty-state consistency**
     - **Validates: Requirements 8.7**
 
-- [~] 14. Checkpoint - sections render from Content_Store
+- [x] 14. Checkpoint - sections render from Content_Store
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 15. Implement Contact form (client)
-  - [~] 15.1 Implement `Contact` section and form with validation states
+- [x] 15. Implement Contact form (client)
+  - [x] 15.1 Implement `Contact` section and form with validation states
     - "GET IN TOUCH" eyebrow, "Contact Me" heading, "Send an Email directly" card; labeled Name/Subject/Email/Message fields (all required) + full-width "SEND MESSAGE"; focus states; validation messages (empty/whitespace, invalid email) via `lib/validation.ts` blocking send; loading state disabling the button with 30s failure cap; success shows confirmation and clears fields; failure shows error, re-enables button, retains values
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 16.3_
 
-  - [ ]* 15.2 Write unit/component tests for Contact form behavior
+  - [x]* 15.2 Write unit/component tests for Contact form behavior
     - Success clears fields; failure retains values; 30s timeout treated as failure; empty/invalid-email validation blocks send
     - _Requirements: 9.4, 9.5, 9.6, 9.7, 9.8_
 
-- [ ] 16. Implement AI assistant (button + modal, client)
-  - [~] 16.1 Implement `AiAssistantButton`
+- [x] 16. Implement AI assistant (button + modal, client)
+  - [x] 16.1 Implement `AiAssistantButton`
     - Near-black circular button (56–64px) with chat icon fixed bottom-right (16–24px margins) above all content; hover scale 105–115% within 300ms; visible keyboard focus (≥3:1, ≥2px); opens panel within 300ms or shows "assistant unavailable" error
     - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6_
 
-  - [~] 16.2 Implement `AiAssistantModal` using the shared Modal primitive
+  - [x] 16.2 Implement `AiAssistantModal` using the shared Modal primitive
     - Centered modal (backdrop blur, not opaque) with header (green status dot, assistant name, close); initial assistant message within 1s; visitor bubbles dark/right + timestamp, assistant bubbles light/left + timestamp; three-dot typing indicator while generating; rounded input (1–2000 chars) + dark send; scrollable list; close transition 200–350ms; keyboard nav across input/send/close; reject empty/whitespace submissions retaining text; on failure remove indicator and show error assistant message while retaining visitor message; POSTs `{question, history}` to `/api/chat`
     - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.7, 12.8, 12.9, 12.10, 12.11, 12.12_
 
-  - [ ]* 16.3 Write unit/component tests for AI assistant interactions
+  - [x]* 16.3 Write unit/component tests for AI assistant interactions
     - Initial message within 1s; empty-input rejection retains text; failure path removes indicator and shows error while retaining visitor message
     - _Requirements: 12.3, 12.11, 12.12_
 
-- [ ] 17. Implement server Route Handlers with provider abstractions
-  - [~] 17.1 Implement `AiProvider` interface + `GeminiProvider` and `/api/chat` route
+- [x] 17. Implement server Route Handlers with provider abstractions
+  - [x] 17.1 Implement `AiProvider` interface + `GeminiProvider` and `/api/chat` route
     - Define `AiProvider` in `src/lib/ai/`; implement `GeminiProvider` reading `GEMINI_API_KEY` server-side only; `app/api/chat/route.ts` validates question length (1–1000), builds grounded prompt from Knowledge_Base via `lib/ai/prompt.ts`, calls `AiProvider.generate`, returns `{answer, grounded}`; on failure returns controlled error; enforces honeypot + per-IP throttle
     - _Requirements: 13.1, 13.2, 13.3, 13.5, 13.6, 12.12_
 
-  - [ ]* 17.2 Write integration tests for `/api/chat` (mocked AiProvider)
+  - [x]* 17.2 Write integration tests for `/api/chat` (mocked AiProvider)
     - Grounded prompt built from Knowledge_Base; unanswerable returns fixed "not available"; provider failure yields controlled error; over-length/empty rejected
     - _Requirements: 13.1, 13.2, 13.3, 13.6, 12.12_
 
-  - [~] 17.3 Implement `MailProvider` interface + provider impl and `/api/contact` route
+  - [x] 17.3 Implement `MailProvider` interface + provider impl and `/api/contact` route
     - Define `MailProvider` in `src/lib/mail/`; implement provider reading `MAIL_API_KEY` server-side only; `app/api/contact/route.ts` applies honeypot + per-IP throttle, server-side validation mirroring the client, then `MailProvider.send`, returning success/failure
     - _Requirements: 9.2, 9.4, 9.5, 9.7, 9.8_
 
-  - [ ]* 17.4 Write integration tests for `/api/contact` (mocked MailProvider)
+  - [x]* 17.4 Write integration tests for `/api/contact` (mocked MailProvider)
     - Server-side validation, honeypot rejection, per-IP throttle, success/failure responses
     - _Requirements: 9.2, 9.4, 9.5, 9.7, 9.8_
 
-- [~] 18. Checkpoint - full feature behavior verified
+- [x] 18. Checkpoint - full feature behavior verified
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 19. Accessibility, responsive, and reduced-motion passes
-  - [~] 19.1 Apply semantic structure, focus indicators, and image alt handling site-wide
+- [x] 19. Accessibility, responsive, and reduced-motion passes
+  - [x] 19.1 Apply semantic structure, focus indicators, and image alt handling site-wide
     - Single `<h1>` with no skipped heading levels; semantic landmarks; visible focus indicators ≥3:1 and ≥2px; descriptive alt for content images and empty alt for decorative images; body-text contrast ≥4.5:1 via tokens
     - _Requirements: 16.1, 16.2, 16.3, 16.4, 16.5, 16.6_
 
-  - [ ]* 19.2 Write accessibility tests (jest-axe)
+  - [x]* 19.2 Write accessibility tests (jest-axe)
     - Heading hierarchy, form labels, roles; focus-indicator contrast (≥3:1) and body-text contrast (≥4.5:1) against Design_Tokens
     - _Requirements: 16.1, 16.3, 16.4, 16.6_
 
-  - [~] 19.3 Implement responsive breakpoints and reduced-motion final-state rendering
+  - [x] 19.3 Implement responsive breakpoints and reduced-motion final-state rendering
     - Desktop ≥1024, tablet 768–1023, mobile 320–767: Hero single column, Projects single column, Skills wrap, Experience timeline left-aligned, AI panel bottom-sheet ≥90% viewport height on mobile; breakpoint transitions apply within 500ms without losing scroll position; disable ScrollReveal/marquee/hover motion under reduced motion, rendering final static state
     - _Requirements: 15.1, 15.2, 15.3, 15.4, 15.5, 17.4, 17.5, 4.8, 6.4, 1.5_
 
-  - [ ]* 19.4 Write responsive and reduced-motion tests
+  - [x]* 19.4 Write responsive and reduced-motion tests
     - Viewport snapshots for the three breakpoint ranges incl. AI bottom-sheet on mobile; reduced-motion renders ScrollReveal/marquee in final static state
     - _Requirements: 15.1, 15.2, 15.3, 15.4, 1.5, 4.8, 6.4, 17.4_
 
-- [ ] 20. Deployment config and env var documentation
-  - [~] 20.1 Add deployment config files and env var documentation
+- [x] 20. Deployment config and env var documentation
+  - [x] 20.1 Add deployment config files and env var documentation
     - Add `vercel.json` (if needed), a `.env.example` documenting server-only `GEMINI_API_KEY` and `MAIL_API_KEY` (and provider config such as a Resend "from" address), and README/notes documenting the required Vercel environment variables; ensure no key is prefixed with `NEXT_PUBLIC_` or referenced from client code
     - _Requirements: 13.4; Design: Deployment & Free-Tier Strategy, Security_
 
-- [ ] 21. Final integration - wire the page and verify production build
-  - [~] 21.1 Compose `app/page.tsx` and `app/layout.tsx` and verify the production build
+- [x] 21. Final integration - wire the page and verify production build
+  - [x] 21.1 Compose `app/page.tsx` and `app/layout.tsx` and verify the production build
     - Wire `ThemeProvider` + fonts + metadata in `app/layout.tsx`; compose LoadingScreen, FloatingNavbar, Hero, MarqueeBanner, About, Experience, Skills, Projects, Contact, and AiAssistantButton in `app/page.tsx`, all sourced from the Content_Store; ensure per-section placeholder indicator for any missing Content_Store entry without breaking other sections; run the production build and fix any errors
     - _Requirements: 14.1, 14.2, 14.3, 14.4; Design: Component Hierarchy_
 
-  - [ ]* 21.2 Run the full test suite and confirm all property, unit, component, integration, and a11y tests pass
+  - [x]* 21.2 Run the full test suite and confirm all property, unit, component, integration, and a11y tests pass
     - Execute the complete Vitest suite in single-run mode
     - _Requirements: Design: Testing Strategy_
 

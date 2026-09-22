@@ -73,6 +73,7 @@ export interface Project {
   role?: string;
   stack?: string[];
   links?: SocialLink[];
+  category?: "Data" | "AI";
 }
 
 export interface MarqueeContent {
