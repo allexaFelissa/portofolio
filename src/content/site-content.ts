@@ -17,9 +17,9 @@ export const siteContent: SiteContent = {
     },
     capabilityBadges: ["Data Analytics", "Python • SQL • Power BI", "Machine Learning"],
     socialLinks: [
-      { platform: "GitHub", url: "https://github.com/", iconAlt: "GitHub profile" },
-      { platform: "LinkedIn", url: "https://www.linkedin.com/", iconAlt: "LinkedIn profile" },
-      { platform: "Instagram", url: "https://www.instagram.com/", iconAlt: "Instagram profile" },
+      { platform: "GitHub", url: "https://github.com/allexaFelissa", iconAlt: "Allexa's GitHub profile" },
+      { platform: "LinkedIn", url: "https://www.linkedin.com/in/allexandra-felissa-tioputri-ab7b71325", iconAlt: "Allexa's LinkedIn profile" },
+      { platform: "Instagram", url: "https://www.instagram.com/allexa.felissa?stkn=MThkNWlrdmhzOGFwag==", iconAlt: "Allexa's Instagram profile" },
     ],
     cvFile: "/allexa-cv-placeholder.txt",
   },

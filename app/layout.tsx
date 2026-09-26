@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/useTheme";
+import { GlobalClickSpark } from "@/components/react-bits/GlobalClickSpark";
 
 /*
  * Typography (Requirement 18.4): "Plus Jakarta Sans" is the primary typeface
@@ -41,7 +42,7 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${inter.variable}`}
     >
-      <body><ThemeProvider>{children}</ThemeProvider></body>
+      <body><ThemeProvider>{children}<GlobalClickSpark /></ThemeProvider></body>
     </html>
   );
 }

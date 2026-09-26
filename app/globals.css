@@ -110,3 +110,317 @@
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+@keyframes react-bits-spark {
+  from { opacity: 1; transform: translateY(0) scaleX(1); }
+  to { opacity: 0; transform: translateY(-20px) scaleX(0.22); }
+}
+
+.react-bits-click-spark {
+  position: absolute;
+  z-index: 50;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.react-bits-click-spark i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgb(var(--color-primary));
+  transform-origin: 0 0;
+  animation: react-bits-spark 720ms cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+.react-bits-click-spark-global i {
+  width: 2px;
+  height: 11px;
+  background: linear-gradient(to top, rgb(56 189 248), rgb(129 140 248));
+  box-shadow: 0 0 8px rgb(56 189 248 / .8);
+}
+
+/* Restrained monochrome lift and aura for interactive portfolio surfaces. */
+:is(
+  #about .aspect-\[4\/5\],
+  #about .space-y-4 > div,
+  #about dl > div,
+  #skills .grid.py-10 > div,
+  #experience li > div,
+  #projects article,
+  #contact form
+) {
+  transition: transform 460ms cubic-bezier(.22, 1, .36, 1), border-color 460ms ease, box-shadow 460ms ease;
+}
+
+:is(
+  #about .aspect-\[4\/5\],
+  #about .space-y-4 > div,
+  #about dl > div,
+  #skills .grid.py-10 > div,
+  #experience li > div,
+  #projects article,
+  #contact form
+):hover {
+  transform: translateY(-3px) scale(1.004);
+  border-color: rgb(var(--color-primary) / .24);
+  box-shadow: 0 16px 34px -22px rgb(var(--color-primary) / .32), 0 0 0 1px rgb(var(--color-primary) / .05);
+}
+
+:is(
+  #skills .grid.py-10 span.rounded-button,
+  #skills .mt-1 span.flex,
+  #experience li .rounded-pill,
+  #about dt,
+  #about dd
+) {
+  transition: transform 360ms cubic-bezier(.22, 1, .36, 1), color 360ms ease, border-color 360ms ease, box-shadow 360ms ease;
+}
+
+:is(
+  #skills .grid.py-10 span.rounded-button,
+  #skills .mt-1 span.flex,
+  #experience li .rounded-pill,
+  #about dt,
+  #about dd
+):hover {
+  transform: translateY(-1px) scale(1.025);
+  border-color: rgb(var(--color-primary) / .28);
+  color: rgb(var(--color-primary));
+  box-shadow: 0 8px 18px -14px rgb(var(--color-primary) / .34);
+}
+
+#about :is(h3, p, dt, dd) {
+  transition: transform 360ms cubic-bezier(.22, 1, .36, 1), color 360ms ease, text-shadow 360ms ease;
+}
+
+#about :is(h3, p, dt, dd):hover {
+  transform: translateX(2px);
+  color: rgb(var(--color-primary));
+  text-shadow: 0 4px 14px rgb(var(--color-primary) / .12);
+}
+
+#projects > div > span:has(> a[href="/projects"]) {
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.react-bits-scroll-velocity {
+  animation: portfolio-marquee var(--scroll-velocity-duration, 16s) linear infinite;
+  will-change: transform;
+}
+
+/* Compact rhythm for every main section except About and Skills. */
+#experience,
+#projects,
+#contacts {
+  padding-block: 5rem;
+}
+
+#experience > div,
+#projects > div {
+  max-width: 60rem;
+}
+
+#experience header,
+#projects header,
+#contact header {
+  margin-bottom: 2.75rem;
+}
+
+#experience header h2,
+#projects header h2,
+#contact header h2 {
+  font-size: 2rem;
+}
+
+#experience ol > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1.5rem;
+}
+
+#experience li > div {
+  padding: 1.25rem;
+}
+
+#experience li h3 {
+  font-size: 1rem;
+}
+
+#experience li p,
+#projects article p {
+  font-size: .8125rem;
+  line-height: 1.45rem;
+}
+
+#projects > div > div.grid {
+  gap: 1.125rem;
+}
+
+#projects article > div:last-child {
+  padding: 1.25rem;
+}
+
+#projects article h3,
+#contact form h3 {
+  font-size: 1.0625rem;
+}
+
+#contact {
+  max-width: 38rem;
+}
+
+#contact form {
+  padding: 1.5rem;
+}
+
+#contact form input,
+#contact form textarea,
+#contact form button {
+  font-size: .8125rem;
+}
+
+@media (max-width: 639px) {
+  #experience,
+  #projects,
+  #contacts {
+    padding-block: 4rem;
+  }
+  #experience header h2,
+  #projects header h2,
+  #contact header h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Motion language sampled from the supplied portfolio reference. */
+@keyframes reference-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reference-nav {
+  from { opacity: 0; transform: translateY(-18px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes reference-portrait {
+  from { opacity: 0; transform: translateX(28px) scale(.94); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes reference-badge {
+  0% { opacity: 0; transform: translateX(18px) scale(.92); }
+  70% { transform: translateX(-3px) scale(1.02); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes reference-modal-backdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes reference-modal-panel {
+  from { opacity: 0; transform: translateY(24px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes reference-message {
+  from { opacity: 0; transform: translateY(8px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes reference-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: .35; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes reference-loader-logo {
+  from { opacity: 0; letter-spacing: .16em; transform: translateY(8px); }
+  to { opacity: 1; letter-spacing: -.025em; transform: translateY(0); }
+}
+
+@keyframes reference-loader-bar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+body > div[role="status"].fixed > div > p:first-of-type {
+  animation: reference-loader-logo 650ms cubic-bezier(.22, 1, .36, 1) both;
+}
+body > div[role="status"].fixed > div > span[aria-label="Loading progress"] {
+  transform-origin: left;
+  animation: reference-loader-bar 800ms cubic-bezier(.22, 1, .36, 1) 120ms both;
+}
+
+.nav-enter {
+  animation: reference-nav 650ms cubic-bezier(.22, 1, .36, 1) 180ms both;
+}
+
+#home > div:first-of-type > * {
+  animation: reference-rise 700ms cubic-bezier(.22, 1, .36, 1) both;
+}
+#home > div:first-of-type > :nth-child(1) { animation-delay: 180ms; }
+#home > div:first-of-type > :nth-child(2) { animation-delay: 280ms; }
+#home > div:first-of-type > :nth-child(3) { animation-delay: 380ms; }
+#home > div:first-of-type > :nth-child(4) { animation-delay: 480ms; }
+#home > div:first-of-type > :nth-child(5) { animation-delay: 580ms; }
+#home > div:first-of-type > :nth-child(6) { animation-delay: 680ms; }
+#home > div:nth-of-type(2) {
+  animation: reference-portrait 850ms cubic-bezier(.22, 1, .36, 1) 280ms both;
+}
+#home > div:nth-of-type(2) span {
+  animation: reference-badge 600ms cubic-bezier(.22, 1, .36, 1) both;
+}
+#home > div:nth-of-type(2) span:nth-child(1) { animation-delay: 760ms; }
+#home > div:nth-of-type(2) span:nth-child(2) { animation-delay: 880ms; }
+#home > div:nth-of-type(2) span:nth-child(3) { animation-delay: 1000ms; }
+
+[role="presentation"] > button.absolute {
+  animation: reference-modal-backdrop 240ms ease-out both;
+}
+[role="presentation"] > [role="dialog"] {
+  animation: reference-modal-panel 420ms cubic-bezier(.22, 1, .36, 1) both;
+  transform-origin: center bottom;
+}
+[role="dialog"] [aria-live="polite"] > div:not(:last-child) {
+  animation: reference-message 320ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@supports (animation-timeline: view()) {
+  #experience header,
+  #projects header,
+  #contact header,
+  #projects article,
+  #contact form {
+    animation: reference-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 8% cover 30%;
+  }
+  #projects article { animation-range: entry 4% cover 24%; }
+  #contact form { animation-range: entry 5% cover 25%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-enter,
+  #home > div:first-of-type > *,
+  #home > div:nth-of-type(2),
+  #home > div:nth-of-type(2) span,
+  [role="presentation"] > button.absolute,
+  [role="presentation"] > [role="dialog"],
+  [role="dialog"] [aria-live="polite"] > div:not(:last-child),
+  #experience header,
+  #projects header,
+  #contact header,
+  #projects article,
+  #contact form {
+    animation: none !important;
+  }
+  body > div[role="status"].fixed > div > p:first-of-type,
+  body > div[role="status"].fixed > div > span[aria-label="Loading progress"] {
+    animation: none !important;
+  }
+}

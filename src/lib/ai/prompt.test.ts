@@ -11,6 +11,8 @@ describe("buildGroundedPrompt", () => {
       expect(prompt).toContain(question);
       expect(prompt).toContain(UNAVAILABLE_ANSWER);
       expect(prompt).toContain("only from the knowledge base");
+      expect(prompt).toContain("Answer the visitor's question directly");
+      expect(prompt).toContain("Do not mention the knowledge base");
     }), { numRuns: 100 });
   });
 });
