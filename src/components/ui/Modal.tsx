@@ -8,7 +8,7 @@ export interface ModalProps {
   open: boolean;
   onClose: () => void;
   labelledBy: string;
-  variant?: "centered" | "bottom-sheet";
+  variant?: "centered" | "bottom-sheet" | "project";
   children: ReactNode;
 }
 
@@ -29,7 +29,9 @@ export function Modal({ open, onClose, labelledBy, variant = "centered", childre
   const position = variant === "bottom-sheet" ? "items-end sm:items-center" : "items-center";
   const panel = variant === "bottom-sheet"
     ? "w-full max-h-[90vh] rounded-t-panel sm:max-w-2xl sm:rounded-panel"
-    : "w-[calc(100%-2rem)] max-w-lg rounded-panel";
+    : variant === "project"
+      ? "w-[calc(100%-1rem)] max-w-5xl rounded-panel"
+      : "w-[calc(100%-2rem)] max-w-lg rounded-panel";
 
   return createPortal(
     <div className={`fixed inset-0 z-[150] flex w-screen justify-center p-4 ${position}`} role="presentation">

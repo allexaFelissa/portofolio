@@ -1,29 +1,20 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/useTheme";
 import { GlobalClickSpark } from "@/components/react-bits/GlobalClickSpark";
 
 /*
- * Typography (Requirement 18.4): "Plus Jakarta Sans" is the primary typeface
- * with "Inter" as the fallback family. Both are loaded via `next/font/google`
- * so weights are self-hosted, size-adjusted, and free of layout shift.
+ * Typography (Requirement 18.4): "Plus Jakarta Sans" is used throughout the
+ * portfolio and loaded via `next/font/google` for a stable, self-hosted render.
  *
  * Plus Jakarta Sans ships weights 400–800 (the range the reference uses for
- * body 400–500 and headings 700–800). Inter is exposed as a CSS variable and
- * listed as the fallback so any glyph the primary font lacks degrades cleanly.
+ * body 400–500 and headings 700–800).
  */
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-plus-jakarta-sans",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
   display: "swap",
 });
 
@@ -40,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${inter.variable}`}
+      className={plusJakartaSans.variable}
     >
       <body><ThemeProvider>{children}<GlobalClickSpark /></ThemeProvider></body>
     </html>

@@ -67,13 +67,14 @@ export interface SoftSkillChip {
 export interface Project {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   thumbnail: ImageRef;
   detailBody?: string;
   role?: string;
   stack?: string[];
   links?: SocialLink[];
-  category?: "Data" | "AI";
+  externalUrl?: string;
+  categories?: Array<"Data" | "AI" | "Web">;
 }
 
 export interface MarqueeContent {

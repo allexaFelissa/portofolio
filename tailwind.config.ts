@@ -17,14 +17,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // Typography (Requirement 18.4): "Plus Jakarta Sans" primary with "Inter"
-      // fallback. The CSS variables are provided by `next/font` in the root
+      // Typography (Requirement 18.4): "Plus Jakarta Sans" throughout. Its
+      // CSS variable is provided by `next/font` in the root
       // layout; system sans is the final fallback. `sans` is the default body
       // family so every surface inherits the reference typeface.
       fontFamily: {
         sans: [
           "var(--font-plus-jakarta-sans)",
-          "var(--font-inter)",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
