@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/useTheme";
 import { GlobalClickSpark } from "@/components/react-bits/GlobalClickSpark";
+import { InteractiveCurrent } from "@/components/layout/InteractiveCurrent";
 
 /*
  * Typography (Requirement 18.4): "Plus Jakarta Sans" is used throughout the
@@ -33,7 +34,7 @@ export default function RootLayout({
       lang="en"
       className={plusJakartaSans.variable}
     >
-      <body><ThemeProvider>{children}<GlobalClickSpark /></ThemeProvider></body>
+      <body><InteractiveCurrent /><ThemeProvider>{children}<GlobalClickSpark /></ThemeProvider></body>
     </html>
   );
 }

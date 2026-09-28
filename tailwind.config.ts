@@ -57,11 +57,11 @@ const config: Config = {
 
         // --- Fixed brand accents (not themed) ---
         // Pure-black accents.
-        ink: "#000000",
+        ink: "#3D271B",
         // AI "online" green range 22C55E–4ADE80.
         "ai-green": {
-          DEFAULT: "#1537FF",
-          light: "#5C76FF",
+          DEFAULT: "#97B789",
+          light: "#B9D3AB",
         },
       },
       borderRadius: {
@@ -80,12 +80,12 @@ const config: Config = {
       boxShadow: {
         // Elevation tokens: opacity 0.04–0.12, blur 8–24px.
         // Floating navbar pill.
-        pill: "0 8px 30px -4px rgb(0 0 0 / 0.07)",
+        pill: "0 8px 30px -4px rgb(61 39 27 / 0.12)",
         // Cards / hovering panels.
-        card: "0 12px 24px -8px rgb(0 0 0 / 0.05)",
-        "card-hover": "0 16px 30px -8px rgb(0 0 0 / 0.10)",
+        card: "0 12px 24px -8px rgb(61 39 27 / 0.10)",
+        "card-hover": "0 16px 30px -8px rgb(61 39 27 / 0.18)",
         // Floating capability badges.
-        badge: "0 8px 24px -4px rgb(0 0 0 / 0.08)",
+        badge: "0 8px 24px -4px rgb(61 39 27 / 0.14)",
       },
     },
   },

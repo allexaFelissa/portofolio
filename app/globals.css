@@ -10,26 +10,26 @@
  */
 @layer base {
   :root {
-    /* Light theme (default) */
-    --color-bg: 255 255 255; /* #FFFFFF page background */
-    --color-primary: 17 19 21; /* #111315 near-black ink */
-    --color-surface: 250 250 251; /* #FAFAFB nested/card fill */
-    --color-border: 236 238 241; /* #ECEEF1 hairline border */
-    --color-muted: 107 114 128; /* #6B7280 muted meta */
-    --color-body: 75 85 99; /* #4B5563 body copy */
-    --color-accent: 21 55 255; /* #1537FF electric blue */
+    /* Warm parchment and cocoa palette from the brown design branch. */
+    --color-bg: 247 241 230; /* #F7F1E6 oat cream */
+    --color-primary: 61 39 27; /* #3D271B cocoa ink */
+    --color-surface: 239 227 210; /* #EFE3D2 parchment */
+    --color-border: 215 194 169; /* #D7C2A9 toasted edge */
+    --color-muted: 119 92 73; /* #775C49 muted walnut */
+    --color-body: 88 64 49; /* #584031 body copy */
+    --color-accent: 151 183 137; /* #97B789 pale sage */
   }
 
   /* Dark theme: activated by root class="dark" or data-theme="dark". */
   .dark,
   [data-theme="dark"] {
-    --color-bg: 17 19 21; /* #111315 near-black canvas */
-    --color-primary: 245 245 247; /* light ink on dark */
-    --color-surface: 26 28 31; /* #1A1C1F elevated surface */
-    --color-border: 42 45 50; /* #2A2D32 hairline border */
-    --color-muted: 156 163 175; /* #9CA3AF muted meta */
-    --color-body: 209 213 219; /* #D1D5DB body copy */
-    --color-accent: 21 55 255; /* single accent across both themes */
+    --color-bg: 32 20 14; /* #20140E deep cocoa */
+    --color-primary: 245 230 210; /* #F5E6D2 cream ink */
+    --color-surface: 46 30 22; /* #2E1E16 raised cocoa */
+    --color-border: 91 63 46; /* #5B3F2E warm border */
+    --color-muted: 193 164 139; /* #C1A48B muted sand */
+    --color-body: 224 200 177; /* #E0C8B1 body copy */
+    --color-accent: 185 211 171; /* #B9D3AB soft sage */
   }
 
   html {
@@ -37,7 +37,15 @@
   }
 
   body {
+    position: relative;
+    isolation: isolate;
     background-color: rgb(var(--color-bg));
+    background-image:
+      linear-gradient(rgb(var(--color-bg) / .88), rgb(var(--color-bg) / .94)),
+      url("/data-topography-cream.webp");
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: auto, 1440px auto;
     color: rgb(var(--color-primary));
     overflow-x: hidden;
     /* Theme transition (Requirement 10.6: apply within 500ms). */
@@ -48,7 +56,7 @@
 
   ::selection {
     background-color: rgb(var(--color-accent));
-    color: white;
+    color: rgb(61 39 27);
   }
 
   /* Honor reduced-motion: disable the theme transition (Requirement 17.4). */
@@ -75,13 +83,7 @@
 }
 
 #home {
-  --color-bg: 255 255 255;
-  --color-primary: 17 19 21;
-  --color-surface: 250 250 251;
-  --color-border: 226 228 233;
-  --color-muted: 82 89 101;
-  --color-body: 61 68 79;
-  background: #fff;
+  background: rgb(var(--color-bg) / .72);
 }
 
 .pixel-dither {
@@ -191,8 +193,35 @@
 .react-bits-click-spark-global i {
   width: 2px;
   height: 11px;
-  background: rgb(var(--color-accent));
-  box-shadow: 0 0 8px rgb(var(--color-accent) / .45);
+  background: linear-gradient(to top, rgb(var(--color-accent)), rgb(var(--color-primary)));
+  box-shadow: 0 0 8px rgb(var(--color-accent) / .38);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-current {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .8;
+}
+
+.dark .interactive-current,
+[data-theme="dark"] .interactive-current {
+  mix-blend-mode: screen;
+  opacity: .48;
+}
+
+@media (max-width: 639px) {
+  body { background-size: auto, 960px auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-current { opacity: .38; }
 }
 
 /* Restrained monochrome lift and aura for interactive portfolio surfaces. */
