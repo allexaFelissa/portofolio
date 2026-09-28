@@ -47,7 +47,7 @@ export function LoadingScreen({ ready, error = false, onRetry, maxVisibleMs = 50
     <div className="relative flex flex-col items-center gap-4 text-center">
       <div aria-hidden="true" className="absolute -inset-20 -z-10 rounded-full bg-primary/10 blur-3xl" />
       <p className="text-xl font-extrabold tracking-tight text-primary">PORTFOLIO.</p>
-      {error ? <><p className="text-sm text-body">Portfolio content could not load.</p>{onRetry && <button type="button" onClick={onRetry} className="rounded-button border border-border px-4 py-2 text-sm font-semibold text-primary focus-visible:outline focus-visible:outline-2">Retry</button>}</> : <><p className="text-eyebrow">PORTFOLIO LOADING</p><span aria-label="Loading progress" className={`h-1 w-28 overflow-hidden rounded-pill bg-border ${reducedMotion ? "" : "animate-pulse"}`}><span className="block h-full w-2/3 rounded-pill bg-primary" /></span></>}
+      {error ? <><p className="text-sm text-body">Portfolio content could not load.</p>{onRetry && <button type="button" onClick={onRetry} className="rounded-button border border-border px-4 py-2 text-sm font-semibold text-primary focus-visible:outline focus-visible:outline-2">Retry</button>}</> : <><p className="text-eyebrow">LOADING</p><span aria-label="Loading progress" className={`h-1 w-28 overflow-hidden rounded-pill bg-border ${reducedMotion ? "" : "animate-pulse"}`}><span className="block h-full w-2/3 rounded-pill bg-primary" /></span></>}
     </div>
   </div>;
 }

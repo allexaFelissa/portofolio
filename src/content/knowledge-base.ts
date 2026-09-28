@@ -9,7 +9,7 @@ export const knowledgeBase: KnowledgeBase = {
 
 Her projects include PayFlow HR, a payroll management application for eight entities that supports final payroll, recaps, payslips, PPh 21, and Coretax processing; SIAGA, a machine-learning multi-hazard early-warning and resource-allocation system for flood and drought risk that placed fourth among more than 200 teams at the Ristek UI Datathon; and Shopee Sales Analytics, an e-commerce analytics project using data validation, transformation, KPI analysis, and a Power BI dashboard.
 
-Her experience includes Software Engineer Intern at PT. Satya Ragam Truxpress (2025), SASC Mentor Scholarship at BINUS University (2024), HIMTI Care Manager at HIMTI BINUS University (2023–2024), and S-Class Program Participant at Ureeka, BINUS University (2023). She values analytical thinking, problem solving, communication, collaboration, leadership, project management, adaptability, and mentoring.
+Her experience includes Software Engineer Intern at PT. Satya Ragam Truxpress (July–September 2026), SASC Mentor Scholarship at BINUS University (February 2026–present), HIMTI Care Manager at HIMTI BINUS University (January 2026–present), and S-Class Program Participant at Ureeka, BINUS University (March 2026–present). She values analytical thinking, problem solving, communication, collaboration, leadership, project management, adaptability, and mentoring.
 
 If a question cannot be answered from these facts, answer exactly: "Information not available."`,
 };

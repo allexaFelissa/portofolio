@@ -8,7 +8,7 @@ describe("LoadingScreen", () => {
   it("fades out within 200–600ms once ready", () => {
     vi.useFakeTimers();
     const { rerender } = render(<LoadingScreen ready={false} />);
-    expect(screen.getByText("PORTFOLIO LOADING")).toBeInTheDocument();
+    expect(screen.getByText("LOADING")).toBeInTheDocument();
     rerender(<LoadingScreen ready />);
     expect(screen.getByRole("status")).toHaveClass("opacity-0");
     act(() => vi.advanceTimersByTime(300));

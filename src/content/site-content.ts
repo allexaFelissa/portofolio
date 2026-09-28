@@ -12,8 +12,8 @@ export const siteContent: SiteContent = {
     description:
       "I'm a Computer Science student focused on data analytics, business intelligence, and machine learning. I enjoy turning raw data into meaningful insights and building data-driven solutions to solve real-world problems.",
     portrait: {
-      src: "/placeholder-portrait.svg",
-      alt: "Placeholder portrait for Allexa",
+      src: "/allexandra-profile.jpeg",
+      alt: "Portrait of Allexandra Felissa Tioputri",
     },
     capabilityBadges: ["Data Analytics", "Python • SQL • Power BI", "Machine Learning"],
     socialLinks: [
@@ -21,14 +21,14 @@ export const siteContent: SiteContent = {
       { platform: "LinkedIn", url: "https://www.linkedin.com/in/allexandra-felissa-tioputri-ab7b71325", iconAlt: "Allexa's LinkedIn profile" },
       { platform: "Instagram", url: "https://www.instagram.com/allexa.felissa?stkn=MThkNWlrdmhzOGFwag==", iconAlt: "Allexa's Instagram profile" },
     ],
-    cvFile: "/allexa-cv-placeholder.txt",
+    cvFile: "/Allexandra-Felissa-CV.pdf",
   },
   about: {
     eyebrow: "DISCOVER",
     heading: "About Me",
     portrait: {
-      src: "/placeholder-portrait.svg",
-      alt: "Placeholder portrait for Allexa",
+      src: "/allexandra-profile.jpeg",
+      alt: "Portrait of Allexandra Felissa Tioputri",
     },
     whoAmI:
       "I'm a Computer Science student passionate about data analytics and data science. Through academic, organizational, and real-world projects, I've worked with data to analyze business problems, build dashboards, and develop machine learning solutions.",
@@ -44,7 +44,7 @@ export const siteContent: SiteContent = {
   experience: [
     {
       id: "software-engineer-intern",
-      year: "2025",
+      year: "Jul 2026 – Sep 2026",
       role: "Software Engineer Intern",
       company: "PT. Satya Ragam Truxpress",
       description:
@@ -53,7 +53,7 @@ export const siteContent: SiteContent = {
     },
     {
       id: "sasc-mentor",
-      year: "2024",
+      year: "Feb 2026 – Present",
       role: "SASC Mentor Scholarship",
       company: "BINUS University",
       description:
@@ -62,7 +62,7 @@ export const siteContent: SiteContent = {
     },
     {
       id: "himti-care-manager",
-      year: "2023–2024",
+      year: "Jan 2026 – Present",
       role: "HIMTI Care Manager",
       company: "HIMTI BINUS University",
       description:
@@ -71,7 +71,7 @@ export const siteContent: SiteContent = {
     },
     {
       id: "s-class-participant",
-      year: "2023",
+      year: "Mar 2026 – Present",
       role: "S-Class Program Participant",
       company: "Ureeka, BINUS University",
       description:
@@ -137,7 +137,11 @@ export const siteContent: SiteContent = {
     {
       id: "global-electronic-retailers-sales-performance",
       title: "Global Electronic Retailers Sales Performance",
+      description: "An interactive sales dashboard tracking revenue, profit, and cost performance across markets, brands, customers, and product categories from 2016 to 2021.",
       thumbnail: { src: "/projects/global-electronic-retailers-sales-performance.png", alt: "Global Electronic Retailers Sales Performance project cover" },
+      detailBody: "Built an interactive Tableau dashboard to analyze global electronics retail performance from 2016 to 2021. The dashboard compares revenue, profit, and total cost trends while breaking down results by country, leading brands, customer segments, and product categories to highlight the strongest contributors to business performance.",
+      stack: ["Tableau", "Sales Analytics", "Data Visualization", "Dashboard Design"],
+      categories: ["Data"],
       demoUrl: "https://public.tableau.com/app/profile/shanaa.salsabil/viz/GlobalElectronicRetailersSalesPerformanceDashboard2016-2021/Dashboard5",
     },
     {
