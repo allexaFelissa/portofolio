@@ -4,7 +4,6 @@ import { useState } from "react";
 import type { HeroContent } from "@/content/types";
 import { siteContent } from "@/content/site-content";
 import { Button } from "@/components/ui/Button";
-import { HalftoneBloom } from "@/components/visuals/HalftoneBloom";
 import { DecryptedText } from "@/components/react-bits/DecryptedText";
 import { ClickSpark } from "@/components/react-bits/ClickSpark";
 import { ScrambledText } from "@/components/react-bits/ScrambledText";
@@ -17,11 +16,11 @@ export function Hero({ content = siteContent.hero }: HeroProps) {
   const badges = content.capabilityBadges.slice(0, 3);
   const exploreWork = () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-  return <section id="home" aria-labelledby="hero-heading" className="relative mx-auto grid min-h-[92vh] max-w-5xl items-center gap-10 overflow-hidden px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:px-8"><HalftoneBloom className="halftone-bloom" />
+  return <section id="home" aria-labelledby="hero-heading" className="relative mx-auto grid min-h-[92vh] max-w-5xl items-center gap-10 overflow-hidden px-6 pb-12 pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
     <div className="relative z-10 max-w-2xl">
       {content.eyebrow && <p data-testid="hero-eyebrow" className="text-eyebrow mb-4"><ScrambledText text={content.eyebrow} /></p>}
       {content.name && <h1 data-testid="hero-name" id="hero-heading" className="text-heading-black text-4xl leading-[1.05] sm:text-5xl">Hi, I&apos;m {content.name}</h1>}
-      {content.role && <p data-testid="hero-role" className="mt-3 text-lg font-bold tracking-tight text-accent sm:text-xl"><DecryptedText text={content.role} /></p>}
+      {content.role && <p data-testid="hero-role" className="mt-3 text-lg font-bold tracking-tight text-primary sm:text-xl"><DecryptedText text={content.role} /></p>}
       {content.description && <p data-testid="hero-description" className="text-body mt-5 max-w-lg text-sm leading-relaxed sm:text-[15px]">{content.description}</p>}
       <div className="mt-9 flex flex-wrap gap-3"><Button onClick={exploreWork}>Explore Work <span aria-hidden="true">→</span></Button>{content.cvFile ? <ClickSpark><a href={content.cvFile} download className="inline-flex items-center justify-center rounded-button border border-border bg-bg px-4 py-2.5 text-sm font-semibold text-primary transition hover:-translate-y-0.5 hover:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Download CV <span aria-hidden="true">↓</span></a></ClickSpark> : <Button variant="outline" onClick={() => setCvUnavailable(true)}>Download CV <span aria-hidden="true">↓</span></Button>}</div>
       {cvUnavailable && <p role="status" className="mt-3 text-sm text-muted">CV unavailable</p>}
