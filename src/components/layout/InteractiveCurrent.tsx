@@ -31,13 +31,11 @@ export function InteractiveCurrent() {
     let frame = 0;
     let width = 0;
     let height = 0;
-    let accent = "151, 183, 137";
-    let primary = "61, 39, 27";
+    let current = "61, 39, 27";
 
     const updateColors = () => {
       const styles = getComputedStyle(document.documentElement);
-      accent = channels(styles.getPropertyValue("--color-accent"));
-      primary = channels(styles.getPropertyValue("--color-primary"));
+      current = channels(styles.getPropertyValue("--color-current"));
     };
 
     const themeObserver = new MutationObserver(updateColors);
@@ -79,17 +77,16 @@ export function InteractiveCurrent() {
       context.clearRect(0, 0, width, height);
 
       STRANDS.forEach((strand, index) => {
-        const color = index % 3 === 1 ? primary : accent;
         context.beginPath();
         for (let x = -48; x <= width + 48; x += 32) {
           const y = strandY(x, index, time);
           if (x === -48) context.moveTo(x, y);
           else context.lineTo(x, y);
         }
-        context.strokeStyle = `rgba(${color}, ${index % 3 === 1 ? .08 : .18})`;
-        context.lineWidth = index % 3 === 1 ? .7 : 1.05;
-        context.shadowColor = `rgba(${accent}, .22)`;
-        context.shadowBlur = 10;
+        context.strokeStyle = `rgba(${current}, ${index % 3 === 1 ? .18 : .32})`;
+        context.lineWidth = index % 3 === 1 ? .9 : 1.3;
+        context.shadowColor = `rgba(${current}, .34)`;
+        context.shadowBlur = 12;
         context.stroke();
         context.shadowBlur = 0;
 
@@ -97,9 +94,9 @@ export function InteractiveCurrent() {
         const pulseX = ((time * (.018 + index * .0018) + strand.phase * 170) % travel) - 80;
         const pulseY = strandY(pulseX, index, time);
         const glow = context.createRadialGradient(pulseX, pulseY, 0, pulseX, pulseY, 12);
-        glow.addColorStop(0, `rgba(${accent}, .72)`);
-        glow.addColorStop(.18, `rgba(${accent}, .32)`);
-        glow.addColorStop(1, `rgba(${accent}, 0)`);
+        glow.addColorStop(0, `rgba(${current}, .82)`);
+        glow.addColorStop(.18, `rgba(${current}, .42)`);
+        glow.addColorStop(1, `rgba(${current}, 0)`);
         context.fillStyle = glow;
         context.beginPath();
         context.arc(pulseX, pulseY, 12, 0, Math.PI * 2);

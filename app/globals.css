@@ -18,6 +18,7 @@
     --color-muted: 119 92 73; /* #775C49 muted walnut */
     --color-body: 88 64 49; /* #584031 body copy */
     --color-accent: 151 183 137; /* #97B789 pale sage */
+    --color-current: 61 39 27; /* #3D271B dark cocoa current */
   }
 
   /* Dark theme: activated by root class="dark" or data-theme="dark". */
@@ -30,6 +31,7 @@
     --color-muted: 193 164 139; /* #C1A48B muted sand */
     --color-body: 224 200 177; /* #E0C8B1 body copy */
     --color-accent: 185 211 171; /* #B9D3AB soft sage */
+    --color-current: 193 164 139; /* visible warm current on deep cocoa */
   }
 
   html {
@@ -207,13 +209,13 @@ main {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: .8;
+  opacity: .96;
 }
 
 .dark .interactive-current,
 [data-theme="dark"] .interactive-current {
   mix-blend-mode: screen;
-  opacity: .48;
+  opacity: .68;
 }
 
 @media (max-width: 639px) {
@@ -221,7 +223,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .interactive-current { opacity: .38; }
+  .interactive-current { opacity: .55; }
 }
 
 /* Restrained monochrome lift and aura for interactive portfolio surfaces. */
