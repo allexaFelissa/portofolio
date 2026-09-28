@@ -53,14 +53,15 @@ const config: Config = {
         muted: "rgb(var(--color-muted) / <alpha-value>)",
         // Body copy: #4B5563.
         body: "rgb(var(--color-body) / <alpha-value>)",
+        accent: "rgb(var(--color-accent) / <alpha-value>)",
 
         // --- Fixed brand accents (not themed) ---
         // Pure-black accents.
         ink: "#000000",
         // AI "online" green range 22C55E–4ADE80.
         "ai-green": {
-          DEFAULT: "#22C55E",
-          light: "#4ADE80",
+          DEFAULT: "#1537FF",
+          light: "#5C76FF",
         },
       },
       borderRadius: {

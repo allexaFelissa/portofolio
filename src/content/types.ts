@@ -74,6 +74,8 @@ export interface Project {
   stack?: string[];
   links?: SocialLink[];
   externalUrl?: string;
+  repositoryUrl?: string;
+  demoUrl?: string;
   categories?: Array<"Data" | "AI" | "Web">;
 }
 

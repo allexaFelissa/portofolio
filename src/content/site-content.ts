@@ -99,6 +99,7 @@ export const siteContent: SiteContent = {
       stack: ["Apache Spark", "Hadoop", "HDFS", "Hive", "K-Means"],
       categories: ["Data", "AI"],
       externalUrl: "https://drive.google.com/drive/folders/1B7-rjvNumqJDMibcolQYZdWUhcSqMPNw",
+      repositoryUrl: "https://github.com/allexaFelissa/olist-ecommerce-analytics.git",
     },
     {
       id: "city-network-traffic-forecasting",
@@ -109,6 +110,7 @@ export const siteContent: SiteContent = {
       stack: ["PyTorch", "NumPy", "Pandas", "Graph Convolutions"],
       categories: ["AI", "Data"],
       externalUrl: "https://drive.google.com/drive/folders/1WFYj-dDL4nLrDPw-hCWKqg9LQpaEaLVe",
+      repositoryUrl: "https://github.com/allexaFelissa/City-Network-Traffic-Forecasting.git",
     },
     {
       id: "ecommerce-delivery-analytics",
@@ -129,11 +131,14 @@ export const siteContent: SiteContent = {
       stack: ["React.js", "Tailwind CSS", "Django REST Framework", "MySQL"],
       categories: ["Web"],
       externalUrl: "https://drive.google.com/drive/folders/1ArnWNF1pz582UBU7jaUABh9sMsIoVSRH",
+      repositoryUrl: "https://github.com/Shanshine12/eco-event-finder-web-app.git",
+      demoUrl: "https://eco-event-finder-web-app.vercel.app/",
     },
     {
       id: "global-electronic-retailers-sales-performance",
       title: "Global Electronic Retailers Sales Performance",
       thumbnail: { src: "/projects/global-electronic-retailers-sales-performance.png", alt: "Global Electronic Retailers Sales Performance project cover" },
+      demoUrl: "https://public.tableau.com/app/profile/shanaa.salsabil/viz/GlobalElectronicRetailersSalesPerformanceDashboard2016-2021/Dashboard5",
     },
     {
       id: "maternal-health-risk",
@@ -173,6 +178,7 @@ export const siteContent: SiteContent = {
       detailBody: "PayFlow HR is a payroll management application developed during my Software Engineering internship to support payroll operations across 8 entities. The system processes attendance and employee data through validation, transformation, and aggregation workflows to support final payroll calculations, payroll recaps, payslip generation, and division-level reporting. It also handles PPh 21 calculations and generates outputs that support Coretax-related payroll requirements, combining backend development with data processing and business-rule implementation.",
       stack: ["Laravel", "React", "PostgreSQL", "REST API", "Tailwind CSS", "Git", "PHP"],
       categories: ["Web", "Data"],
+      repositoryUrl: "https://github.com/allexaFelissa/payFlow-demo.git",
     },
     {
       id: "shopee-sales-dashboard",
@@ -182,6 +188,7 @@ export const siteContent: SiteContent = {
       detailBody: "Shopee Sales Analytics is an end-to-end e-commerce business intelligence project that investigates which product categories demonstrate strong and widespread favorite engagement. The project covers the full analytics workflow, from validating and transforming raw marketplace data to performing exploratory analysis, developing KPIs, and evaluating the reliability of the available engagement signals. The results are presented through an interactive Power BI dashboard using DAX to help communicate category-level patterns and supporting evidence.",
       stack: ["Python", "SQL", "Pandas", "Power BI", "DAX", "Power Query", "Matplotlib"],
       categories: ["Data"],
+      repositoryUrl: "https://github.com/allexaFelissa/shopee-sales.git",
     },
     {
       id: "siaga",
@@ -192,6 +199,7 @@ export const siteContent: SiteContent = {
       stack: ["Python", "XGBoost", "Scikit-learn", "GloFAS", "ERA5", "WorldPop", "OpenStreetMap", "Sentinel-1", "CVaR"],
       categories: ["AI", "Data"],
       externalUrl: "https://drive.google.com/drive/folders/17j7aW-oIbz7_Q-usaRaL8boEbt52mQxG",
+      repositoryUrl: "https://github.com/ethannchrstian/Siaga.git",
     },
     {
       id: "wiki-next-click",
@@ -202,6 +210,7 @@ export const siteContent: SiteContent = {
       stack: ["Tesseract OCR", "NetworkX", "TF-IDF", "PageRank", "RapidFuzz"],
       categories: ["AI", "Data"],
       externalUrl: "https://drive.google.com/drive/folders/1Ao3zxFAr_pRDxmIlpLXwubrbBPvoHHTS",
+      repositoryUrl: "https://github.com/allexaFelissa/Wiki-Article-Next-Click-Prediction.git",
     },
   ],
   sectionHeadings: {

@@ -22,7 +22,7 @@ export function AiAssistantModal({ open, onClose }: { open: boolean; onClose: ()
   const bottom = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (open && !messages.length) setMessages([{ role: "assistant", text: "Hi — ask me about Allexa's experience, skills, or projects.", time: stamp() }]);
+    if (open && !messages.length) setMessages([{ role: "assistant", text: "Hi! I’m a personal AI assistant designed to help you explore Allexa’s portfolio, experience, skills, and projects. What would you like to know?", time: stamp() }]);
   }, [open, messages.length]);
 
   useEffect(() => {
