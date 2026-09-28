@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { siteContent } from "@/content/site-content";
+import { siteContentId } from "@/content/site-content-id";
+import { useLanguage } from "@/hooks/useLanguage";
 import { LoadingScreen } from "@/components/layout/LoadingScreen";
 import { FloatingNavbar } from "@/components/layout/FloatingNavbar";
 import { Hero } from "@/components/sections/Hero";
@@ -13,11 +15,13 @@ import { Contact } from "@/components/sections/Contact";
 import { AiAssistantButton } from "@/components/ai/AiAssistantButton";
 
 export default function Page() {
+  const { language } = useLanguage();
+  const content = language === "id" ? siteContentId : siteContent;
   const [ready,setReady] = useState(false); useEffect(() => { const timer = window.setTimeout(() => setReady(true), 900); return () => window.clearTimeout(timer); }, []);
   const featuredProjectIds = ["siaga", "shopee-sales-dashboard", "payflow"];
   const featuredProjects = featuredProjectIds.flatMap(id => {
-    const project = siteContent.projects.find(item => item.id === id);
+    const project = content.projects.find(item => item.id === id);
     return project ? [project] : [];
   });
-  return <><LoadingScreen ready={ready} /><FloatingNavbar /><main><Hero /><MarqueeBanner /><About content={siteContent.about} /><Experience entries={siteContent.experience} heading={siteContent.sectionHeadings.experience} /><Skills hard={siteContent.hardSkills} soft={siteContent.softSkills} heading={siteContent.sectionHeadings.skills} /><Projects projects={featuredProjects} heading={siteContent.sectionHeadings.projects} /><Contact heading={siteContent.sectionHeadings.contact} /></main><AiAssistantButton /></>;
+  return <><LoadingScreen ready={ready} /><FloatingNavbar /><main><Hero content={content.hero} /><MarqueeBanner content={content.marquee} /><About content={content.about} /><Experience entries={content.experience} heading={content.sectionHeadings.experience} /><Skills hard={content.hardSkills} soft={content.softSkills} heading={content.sectionHeadings.skills} /><Projects projects={featuredProjects} heading={content.sectionHeadings.projects} /><Contact heading={content.sectionHeadings.contact} /></main><AiAssistantButton /></>;
 }
