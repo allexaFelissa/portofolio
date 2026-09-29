@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "./useReducedMotion";
 
-export function useScrollReveal<T extends Element>(threshold = 0.2) {
+export function useScrollReveal<T extends Element>(threshold = 0.15) {
   const ref = useRef<T>(null);
   const reducedMotion = useReducedMotion();
   const [revealed, setRevealed] = useState(reducedMotion);
@@ -21,11 +21,8 @@ export function useScrollReveal<T extends Element>(threshold = 0.2) {
     }
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry?.isIntersecting) {
-        setRevealed(true);
-        observer.disconnect();
-      }
-    }, { threshold });
+      if (entry) setRevealed(entry.isIntersecting);
+    }, { threshold, rootMargin: "-4% 0px" });
 
     observer.observe(element);
     return () => observer.disconnect();
