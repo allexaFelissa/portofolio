@@ -10,6 +10,8 @@
  */
 @layer base {
   :root {
+    --ease-out: cubic-bezier(.23, 1, .32, 1);
+    --ease-in-out: cubic-bezier(.77, 0, .175, 1);
     /* Warm parchment and cocoa palette from the brown design branch. */
     --color-bg: 247 241 230; /* #F7F1E6 oat cream */
     --color-primary: 61 39 27; /* #3D271B cocoa ink */
@@ -422,6 +424,21 @@ main {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes scroll-reveal-rise {
+  from { opacity: 0; transform: translateY(32px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes scroll-reveal-left {
+  from { opacity: 0; transform: translateX(-28px) scale(.98); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes scroll-reveal-right {
+  from { opacity: 0; transform: translateX(28px) scale(.98); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
 @keyframes reference-nav {
   from { opacity: 0; transform: translateY(-18px) scale(.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
@@ -511,16 +528,58 @@ body > div[role="status"].fixed > div > span[aria-label="Loading progress"] {
 }
 
 @supports (animation-timeline: view()) {
+  #about header,
+  #skills header,
   #experience header,
   #projects header,
   #contact header,
   #projects article,
-  #contact form {
-    animation: reference-rise linear both;
+  #contact form,
+  .projects-catalog > div > header,
+  .projects-catalog article {
+    animation: scroll-reveal-rise both;
     animation-timeline: view();
     animation-range: entry 8% cover 30%;
+    animation-timing-function: var(--ease-out);
   }
-  #projects article { animation-range: entry 4% cover 24%; }
+
+  #about .grid > div:first-child {
+    animation: scroll-reveal-left both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+    animation-timing-function: var(--ease-out);
+  }
+
+  #about .grid > div:last-child,
+  #skills > div > div:first-of-type,
+  #skills .mt-1 > div:first-child,
+  .projects-catalog > div > div:first-of-type {
+    animation: scroll-reveal-right both;
+    animation-timeline: view();
+    animation-range: entry 7% cover 31%;
+    animation-timing-function: var(--ease-out);
+  }
+
+  #experience li,
+  #skills .mt-1 .flex-wrap > span,
+  #contact form label,
+  #contact form > button {
+    animation: scroll-reveal-rise both;
+    animation-timeline: view();
+    animation-range: entry 3% cover 24%;
+    animation-timing-function: var(--ease-out);
+  }
+
+  #experience li:nth-child(even),
+  #skills .mt-1 .flex-wrap > span:nth-child(even),
+  #contact form label:nth-child(even) {
+    animation-range: entry 7% cover 28%;
+  }
+
+  #projects article:nth-child(3n + 2),
+  .projects-catalog article:nth-child(3n + 2) { animation-range: entry 7% cover 27%; }
+  #projects article:nth-child(3n),
+  .projects-catalog article:nth-child(3n) { animation-range: entry 10% cover 30%; }
   #contact form { animation-range: entry 5% cover 25%; }
 }
 
@@ -536,8 +595,22 @@ body > div[role="status"].fixed > div > span[aria-label="Loading progress"] {
   #projects header,
   #contact header,
   #projects article,
-  #contact form {
+  #contact form,
+  #about header,
+  #about .grid > div,
+  #skills header,
+  #skills > div > div:first-of-type,
+  #skills .mt-1 > div:first-child,
+  #skills .mt-1 .flex-wrap > span,
+  #experience li,
+  #contact form label,
+  #contact form > button,
+  .projects-catalog > div > header,
+  .projects-catalog > div > div:first-of-type,
+  .projects-catalog article {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   body > div[role="status"].fixed > div > p:first-of-type,
   body > div[role="status"].fixed > div > span[aria-label="Loading progress"] {
