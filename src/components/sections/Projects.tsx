@@ -16,7 +16,7 @@ export function Projects({ projects, heading }: { projects: Project[]; heading: 
   const { isEmpty, projects: items } = getProjectsState(projects);
   const [selected, setSelected] = useState<Project>();
 
-  return <section id="projects" className="relative overflow-hidden px-6 py-24 sm:py-32">
+  return <section id="projects" className="atmospheric-blur-section relative overflow-hidden px-6 py-24 sm:py-32">
     <PixelDither density="low" origin="top-left" drift="down" className="absolute left-[max(0px,calc(50%-31rem))] top-12 w-32 text-accent opacity-35" />
     <div className="relative mx-auto max-w-6xl">
       <SectionHeading {...heading} centered className="mb-14" />
