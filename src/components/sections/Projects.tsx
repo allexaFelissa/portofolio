@@ -36,7 +36,7 @@ export function Projects({ projects, heading }: { projects: Project[]; heading: 
             </article>
           </GlareHover>)}
         </div>
-        <ClickSpark className="mx-auto mt-10"><a href="/projects" className="flex w-fit rounded-button border border-border px-5 py-3 text-sm font-bold text-primary transition hover:-translate-y-0.5 hover:border-primary">View more projects ↗</a></ClickSpark>
+        <ClickSpark className="mx-auto mt-10"><a href="/projects" className="flex w-fit rounded-button border border-border px-5 py-3 text-sm font-bold text-primary transition hover:-translate-y-0.5 hover:border-primary">{id ? "Lihat proyek lainnya" : "View more projects"} ↗</a></ClickSpark>
       </>}
     </div>
     {selected && <ProjectDetailModal project={selected} onClose={() => setSelected(undefined)} />}

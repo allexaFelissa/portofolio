@@ -10,6 +10,12 @@ import { ProjectDetailModal } from "./ProjectDetailModal";
 
 type Filter = "All" | "Data" | "AI" | "Web";
 
+const projectOrder: Partial<Record<Filter, string[]>> = {
+  All: ["siaga", "shopee-sales-dashboard", "payflow", "maternal-health-risk", "city-network-traffic-forecasting", "wiki-next-click"],
+  Data: ["shopee-sales-dashboard", "city-network-traffic-forecasting", "brazilian-ecommerce"],
+  AI: ["siaga", "maternal-health-risk", "wiki-next-click"],
+};
+
 export function ProjectGallery({ projects }: { projects: Project[] }) {
   const { language } = useLanguage();
   const id = language === "id";
@@ -19,7 +25,15 @@ export function ProjectGallery({ projects }: { projects: Project[] }) {
   const [filter, setFilter] = useState<Filter>("All");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<Project>();
-  const visible = useMemo(() => projects.filter(project => (filter === "All" || project.categories?.includes(filter)) && `${project.title} ${project.description ?? ""} ${project.stack?.join(" ") ?? ""}`.toLowerCase().includes(query.trim().toLowerCase())), [filter, projects, query]);
+  const visible = useMemo(() => {
+    const preferred = projectOrder[filter] ?? [];
+    const rank = new Map(preferred.map((projectId, index) => [projectId, index]));
+    return projects
+      .map((project, originalIndex) => ({ project, originalIndex }))
+      .filter(({ project }) => (filter === "All" || project.categories?.includes(filter)) && `${project.title} ${project.description ?? ""} ${project.stack?.join(" ") ?? ""}`.toLowerCase().includes(query.trim().toLowerCase()))
+      .sort((a, b) => (rank.get(a.project.id) ?? preferred.length + a.originalIndex) - (rank.get(b.project.id) ?? preferred.length + b.originalIndex))
+      .map(({ project }) => project);
+  }, [filter, projects, query]);
   const count = (value: Filter) => value === "All" ? projects.length : projects.filter(project => project.categories?.includes(value)).length;
 
   return <>
