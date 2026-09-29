@@ -73,7 +73,7 @@ export function AiAssistantModal({ open, onClose }: { open: boolean; onClose: ()
           <div className="flex flex-wrap gap-2">{STARTER_PROMPTS.map((prompt) => <button key={prompt} type="button" disabled={typing} onClick={() => void sendQuestion(prompt)} className="rounded-pill border border-border bg-surface px-3 py-2 text-left text-xs font-semibold text-primary transition hover:-translate-y-0.5 hover:border-primary disabled:cursor-not-allowed disabled:opacity-50">{prompt}</button>)}</div>
         </div>
         <form onSubmit={submit} className="flex gap-2 bg-bg p-4">
-          <input aria-label="Ask a question" maxLength={1000} value={question} onChange={(event) => setQuestion(event.target.value)} className="min-w-0 flex-1 rounded-pill border border-border bg-bg px-4 py-3 text-sm outline-none focus:border-primary" placeholder="Ask about this portfolio…" />
+          <input aria-label="Ask a question" maxLength={1000} value={question} onChange={(event) => setQuestion(event.target.value)} className="min-w-0 flex-1 rounded-pill border border-border bg-bg px-4 py-3 text-sm text-primary placeholder:text-muted outline-none focus:border-primary" placeholder="Ask about this portfolio…" />
           <button disabled={typing} className="rounded-pill bg-primary px-5 text-sm font-bold text-bg disabled:opacity-50">Send</button>
         </form>
       </div>
