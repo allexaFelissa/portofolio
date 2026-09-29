@@ -28,7 +28,7 @@ export const siteContent: SiteContent = {
     eyebrow: "DISCOVER",
     heading: "About Me",
     portrait: {
-      src: "/allexandra-profile.jpeg",
+      src: "/allexandra-profile-about.jpeg",
       alt: "Portrait of Allexandra Felissa Tioputri",
     },
     whoAmI:
