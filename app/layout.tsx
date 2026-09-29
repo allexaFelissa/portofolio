@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import { GlobalClickSpark } from "@/components/react-bits/GlobalClickSpark";
 import { InteractiveCurrent } from "@/components/layout/InteractiveCurrent";
 import { LanguageProvider } from "@/hooks/useLanguage";
+import { FeatureHint } from "@/components/layout/FeatureHint";
 
 /*
  * Typography (Requirement 18.4): "Plus Jakarta Sans" is used throughout the
@@ -35,7 +36,7 @@ export default function RootLayout({
       lang="en"
       className={plusJakartaSans.variable}
     >
-      <body><InteractiveCurrent /><ThemeProvider><LanguageProvider>{children}<GlobalClickSpark /></LanguageProvider></ThemeProvider></body>
+      <body><InteractiveCurrent /><ThemeProvider><LanguageProvider>{children}<FeatureHint /><GlobalClickSpark /></LanguageProvider></ThemeProvider></body>
     </html>
   );
 }

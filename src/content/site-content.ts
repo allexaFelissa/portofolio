@@ -6,7 +6,6 @@ import type { SiteContent } from "./types";
  */
 export const siteContent: SiteContent = {
   hero: {
-    eyebrow: "DATA ANALYST PORTFOLIO",
     name: "Allexa",
     role: "Aspiring Data Analyst & Data Scientist",
     description:
