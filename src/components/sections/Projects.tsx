@@ -7,7 +7,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlareHover } from "@/components/react-bits/GlareHover";
 import { ClickSpark } from "@/components/react-bits/ClickSpark";
 import { ProjectDetailModal } from "@/components/projects/ProjectDetailModal";
-import { PixelDither } from "@/components/visuals/PixelDither";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export function Projects({ projects, heading }: { projects: Project[]; heading: { eyebrow?: string; heading?: string } }) {
@@ -17,7 +16,6 @@ export function Projects({ projects, heading }: { projects: Project[]; heading: 
   const [selected, setSelected] = useState<Project>();
 
   return <section id="projects" className="atmospheric-blur-section relative overflow-hidden px-6 py-24 sm:py-32">
-    <PixelDither density="low" origin="top-left" drift="down" className="absolute left-[max(0px,calc(50%-31rem))] top-12 w-32 text-accent opacity-35" />
     <div className="relative mx-auto max-w-6xl">
       <SectionHeading {...heading} centered className="mb-14" />
       {isEmpty ? <p className="text-center text-body">{id ? "Proyek belum tersedia." : "No projects are available yet."}</p> : <>

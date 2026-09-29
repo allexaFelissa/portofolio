@@ -5,14 +5,13 @@ import { filterValidExperience } from "@/lib/content";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { PixelDither } from "@/components/visuals/PixelDither";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export function Experience({ entries, heading }: { entries: ExperienceEntry[]; heading: { eyebrow?: string; heading?: string } }) {
   const { language } = useLanguage();
   const valid = filterValidExperience(entries).slice(0, 20); const timelineRef = useRef<HTMLOListElement>(null); const [progress, setProgress] = useState(0); const reducedMotion = useReducedMotion();
   useEffect(() => { if (reducedMotion) { setProgress(1); return; } let frame = 0; const update = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(() => { const timeline = timelineRef.current; if (!timeline) return; const rect = timeline.getBoundingClientRect(); const cursor = window.innerHeight * .55; setProgress(Math.max(0, Math.min(1, (cursor - rect.top) / rect.height))); }); }; update(); window.addEventListener("scroll", update, { passive: true }); window.addEventListener("resize", update); return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", update); window.removeEventListener("resize", update); }; }, [reducedMotion]);
-  return <section id="experience" className="atmospheric-blur-section relative overflow-hidden px-6 py-24 sm:py-32"><PixelDither density="low" origin="top-right" drift="up" className="absolute right-0 top-28 w-24 text-accent opacity-40" /><div className="relative mx-auto max-w-5xl"><SectionHeading {...heading} centered className="mb-16" />
+  return <section id="experience" className="atmospheric-blur-section relative overflow-hidden px-6 py-24 sm:py-32"><div className="relative mx-auto max-w-5xl"><SectionHeading {...heading} centered className="mb-16" />
     {valid.length === 0 ? <p className="text-center text-body">{language === "id" ? "Pengalaman belum tersedia." : "No experience is available yet."}</p> : <ol ref={timelineRef} className="relative space-y-8">
       <span aria-hidden="true" className="absolute bottom-0 left-2 top-0 w-px bg-border md:left-1/2" />
       <span aria-hidden="true" data-testid="timeline-progress" className="absolute left-2 top-0 w-[2px] bg-primary will-change-[height] md:left-1/2" style={{ height: `${progress * 100}%` }} />

@@ -3,7 +3,6 @@
 import { useState, type FormEvent } from "react";
 import { CONTACT_FIELD_LIMITS, isValidEmail, validateField } from "@/lib/validation";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PixelDither } from "@/components/visuals/PixelDither";
 import { useLanguage } from "@/hooks/useLanguage";
 
 type Values = { name: string; subject: string; email: string; message: string };
@@ -50,7 +49,6 @@ export function Contact({ heading }: { heading: { eyebrow?: string; heading?: st
   const labels: Record<"name" | "subject" | "email", string> = id ? { name: "Nama", subject: "Subjek", email: "Email" } : { name: "Name", subject: "Subject", email: "Email" };
 
   return <section id="contacts" className="relative overflow-hidden bg-surface px-6 py-24 sm:py-32">
-    <PixelDither density="strong" origin="bottom-right" drift="up" className="absolute -bottom-8 right-0 w-56 text-accent opacity-55" />
     <div id="contact" className="relative mx-auto max-w-2xl">
       <SectionHeading {...heading} centered className="mb-12" />
       <form onSubmit={submit} noValidate className="rounded-[1.5rem] border border-border bg-bg p-6 shadow-card sm:p-9">
