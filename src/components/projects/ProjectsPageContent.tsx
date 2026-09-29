@@ -15,7 +15,7 @@ export function ProjectsPageContent() {
   const id = language === "id";
   return <>
     <header className="fixed inset-x-4 top-3 z-40 mx-auto flex max-w-2xl items-center justify-between rounded-pill border border-border bg-bg/90 px-3 py-2 shadow-pill backdrop-blur-md">
-      <Link href="/" className="px-2 text-sm font-extrabold tracking-tight text-primary">PORTFOLIO.</Link><span className="h-4 w-px bg-border" />
+      <Link href="/" className="px-2 text-sm font-extrabold tracking-tight text-primary">{id ? "PORTOFOLIO." : "PORTFOLIO."}</Link><span className="h-4 w-px bg-border" />
       <Link href="/#projects" className="text-xs font-semibold text-muted transition hover:text-primary">← {id ? "Kembali" : "Back to Portfolio"}</Link><span className="hidden h-4 w-px bg-border sm:block" />
       <span className="hidden rounded-pill bg-surface px-3 py-1 text-[11px] font-bold text-primary sm:block">{id ? "Proyek" : "Projects"}</span>
       <div className="flex items-center gap-1.5"><LanguageToggle /><ThemeToggle /></div>
