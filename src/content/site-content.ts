@@ -192,6 +192,7 @@ export const siteContent: SiteContent = {
       detailBody: "Shopee Sales Analytics is an end-to-end e-commerce business intelligence project that investigates which product categories demonstrate strong and widespread favorite engagement. The project covers the full analytics workflow, from validating and transforming raw marketplace data to performing exploratory analysis, developing KPIs, and evaluating the reliability of the available engagement signals. The results are presented through an interactive Power BI dashboard using DAX to help communicate category-level patterns and supporting evidence.",
       stack: ["Python", "SQL", "Pandas", "Power BI", "DAX", "Power Query", "Matplotlib"],
       categories: ["Data"],
+      externalUrl: "https://drive.google.com/drive/folders/1g0duot8RHHL51TwSvlld5R4u3iPb5IIh?usp=sharing",
       repositoryUrl: "https://github.com/allexaFelissa/shopee-sales.git",
     },
     {
