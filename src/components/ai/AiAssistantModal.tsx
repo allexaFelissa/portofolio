@@ -41,8 +41,11 @@ export function AiAssistantModal({ open, onClose }: { open: boolean; onClose: ()
       const data = (await response.json()) as { answer?: string; error?: string };
       if (!response.ok || !data.answer) throw new Error(data.error ?? "Assistant unavailable");
       setMessages((current) => [...current, { role: "assistant", text: data.answer!, time: stamp() }]);
-    } catch {
-      setMessages((current) => [...current, { role: "assistant", text: "I couldn't answer just now. Please try again.", time: stamp() }]);
+    } catch (error) {
+      const message = error instanceof Error && error.message
+        ? error.message
+        : "The assistant is temporarily busy. Please try again shortly.";
+      setMessages((current) => [...current, { role: "assistant", text: message, time: stamp() }]);
     } finally {
       setTyping(false);
     }

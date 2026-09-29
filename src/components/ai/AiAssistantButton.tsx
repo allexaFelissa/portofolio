@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { markFeatureUsed } from "@/lib/feature-hint";
 import { AiAssistantModal } from "./AiAssistantModal";
 
-const BADGE_STORAGE_KEY = "portfolio-ai-try-me-dismissed";
+const BADGE_STORAGE_KEY = "portfolio-ai-try-me-dismissed-v2";
 
 export function AiAssistantButton() {
   const [open, setOpen] = useState(false);

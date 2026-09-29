@@ -77,13 +77,13 @@ export async function POST(request: NextRequest) {
 
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
     if (isRateLimited(`chat:${ip}`)) {
-      return NextResponse.json({ error: "Too many requests." }, { status: 429 });
+      return NextResponse.json({ error: "The assistant is temporarily busy. Please try again shortly." }, { status: 429 });
     }
 
     const answer = await new GeminiProvider().generate(buildGroundedPrompt(knowledgeBase, question));
     return NextResponse.json({ answer, grounded: true });
   } catch (error) {
     console.error("Portfolio assistant failed:", error instanceof Error ? error.message : "Unknown error");
-    return NextResponse.json({ error: "Assistant unavailable." }, { status: 503 });
+    return NextResponse.json({ error: "The assistant is temporarily busy. Please try again shortly." }, { status: 503 });
   }
 }
