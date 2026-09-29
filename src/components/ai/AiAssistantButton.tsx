@@ -6,17 +6,17 @@ import { AiAssistantModal } from "./AiAssistantModal";
 
 const BADGE_STORAGE_KEY = "portfolio-ai-try-me-dismissed-v2";
 
-export function AiAssistantButton() {
+export function AiAssistantButton({ showTryMe = true }: { showTryMe?: boolean }) {
   const [open, setOpen] = useState(false);
   const [showBadge, setShowBadge] = useState(false);
 
   useEffect(() => {
     try {
-      setShowBadge(window.localStorage.getItem(BADGE_STORAGE_KEY) !== "true");
+      setShowBadge(showTryMe && window.localStorage.getItem(BADGE_STORAGE_KEY) !== "true");
     } catch {
-      setShowBadge(true);
+      setShowBadge(showTryMe);
     }
-  }, []);
+  }, [showTryMe]);
 
   const openAssistant = () => {
     setOpen(true);

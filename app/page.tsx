@@ -13,6 +13,7 @@ import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
 import { AiAssistantButton } from "@/components/ai/AiAssistantButton";
+import { FeatureHint } from "@/components/layout/FeatureHint";
 
 export default function Page() {
   const { language } = useLanguage();
@@ -23,5 +24,5 @@ export default function Page() {
     const project = content.projects.find(item => item.id === id);
     return project ? [project] : [];
   });
-  return <><LoadingScreen ready={ready} /><FloatingNavbar /><main><Hero content={content.hero} /><MarqueeBanner content={content.marquee} /><About content={content.about} /><Experience entries={content.experience} heading={content.sectionHeadings.experience} /><Skills hard={content.hardSkills} soft={content.softSkills} heading={content.sectionHeadings.skills} /><Projects projects={featuredProjects} heading={content.sectionHeadings.projects} /><Contact heading={content.sectionHeadings.contact} /></main><AiAssistantButton /></>;
+  return <><LoadingScreen ready={ready} /><FloatingNavbar /><main><Hero content={content.hero} /><MarqueeBanner content={content.marquee} /><About content={content.about} /><Experience entries={content.experience} heading={content.sectionHeadings.experience} /><Skills hard={content.hardSkills} soft={content.softSkills} heading={content.sectionHeadings.skills} /><Projects projects={featuredProjects} heading={content.sectionHeadings.projects} /><Contact heading={content.sectionHeadings.contact} /></main><FeatureHint /><AiAssistantButton /></>;
 }
