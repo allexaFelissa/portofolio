@@ -5,7 +5,6 @@ import type { AboutContent } from "@/content/types";
 import { getPresentPersonalDetails } from "@/lib/content";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PixelDither } from "@/components/visuals/PixelDither";
 import { useLanguage } from "@/hooks/useLanguage";
 
 const detailLabels: Record<string, string> = {
@@ -26,7 +25,6 @@ export function About({ content }: { content: AboutContent }) {
       <SectionHeading eyebrow={content.eyebrow} heading={content.heading} centered className="mb-10 [&_h2]:text-3xl sm:mb-12 sm:[&_h2]:text-4xl" />
       <div className="grid items-center gap-8 md:grid-cols-[0.72fr_1.28fr] lg:gap-10">
         <ScrollReveal className="relative mx-auto w-full max-w-[320px]">
-          <PixelDither density="low" origin="bottom-left" className="absolute -bottom-8 -left-10 z-10 w-32 text-accent opacity-75" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] border border-border bg-bg shadow-card transition-colors">
             {image ? <img src={image} alt={content.portrait?.alt ?? ""} onError={() => setImage(undefined)} className="size-full object-cover" /> : <div className="grid size-full place-items-center text-xs text-muted">{id ? "Foto tidak tersedia" : "Portrait unavailable"}</div>}
           </div>
