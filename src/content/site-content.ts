@@ -182,7 +182,6 @@ export const siteContent: SiteContent = {
       detailBody: "Commissioned by PT Satya Ragam Truxpress, PayFlow HR is used in live payroll operations across eight entities in the same corporate group. It validates, transforms, and aggregates employee and attendance data for final payroll, payslips, division reporting, PPh 21 calculations, and Coretax-compatible outputs. The public demo uses synthetic data to protect company and payroll information.",
       stack: ["Laravel", "React", "PostgreSQL", "REST API", "Tailwind CSS", "Git", "PHP"],
       categories: ["Web", "Data"],
-      proof: "Commissioned and used in operations",
       repositoryUrl: "https://github.com/allexaFelissa/payFlow-demo.git",
     },
     {
@@ -204,7 +203,6 @@ export const siteContent: SiteContent = {
       detailBody: "SIAGA earned 4th place among 200+ teams at RISTEK UI Datathon 2026, one of Indonesia's largest data competitions. The system supports early warning and resource allocation for flood and drought risks across Northern Java by integrating climate, hydrology, population, geographic, infrastructure, and satellite data. It combines calibrated XGBoost risk models with CVaR-based optimization for limited-resource planning under high-risk scenarios.",
       stack: ["Python", "XGBoost", "Scikit-learn", "GloFAS", "ERA5", "WorldPop", "OpenStreetMap", "Sentinel-1", "CVaR"],
       categories: ["AI", "Data"],
-      proof: "Top 4 of 200+ teams",
       externalUrl: "https://drive.google.com/drive/folders/17j7aW-oIbz7_Q-usaRaL8boEbt52mQxG",
       repositoryUrl: "https://github.com/ethannchrstian/Siaga.git",
     },

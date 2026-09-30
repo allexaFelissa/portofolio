@@ -27,7 +27,7 @@ export const siteContentId: SiteContent = {
   marquee: { text: "ANALISIS DATA • BUSINESS INTELLIGENCE • MACHINE LEARNING" },
   hardSkills: siteContent.hardSkills.map(card => ({ ...card, description: ({ "programming-data": "Bahasa dan package utama untuk manipulasi data.", "bi-visualization": "Dashboard interaktif dan pelaporan business intelligence.", "machine-learning": "Pemodelan prediktif, klasifikasi, dan metrik evaluasi.", "database-dev": "Basis data relasional, version control, dan layanan antarmuka." } as Record<string, string>)[card.id] ?? card.description })),
   softSkills: ["Berpikir Analitis", "Pemecahan Masalah", "Komunikasi", "Kolaborasi Tim", "Kepemimpinan", "Manajemen Proyek", "Adaptabilitas", "Mentoring"].map((label, index) => ({ id: siteContent.softSkills[index].id, label })),
-  projects: siteContent.projects.map(project => ({ ...project, ...(projectCopy[project.id] ?? {}), proof: project.id === "siaga" ? "Top 4 dari 200+ tim" : project.id === "payflow" ? "Dipesan dan digunakan nyata" : project.proof })),
+  projects: siteContent.projects.map(project => ({ ...project, ...(projectCopy[project.id] ?? {}) })),
   sectionHeadings: {
     experience: { eyebrow: "PENGALAMAN", heading: "Yang Telah Saya Kerjakan" },
     skills: { eyebrow: "KEAHLIAN & TOOLS", heading: "Keahlian & Kemampuan" },
