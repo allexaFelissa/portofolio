@@ -20,6 +20,7 @@ export function ProjectDetailModal({ project, onClose }: { project: Project; onC
         <div className="relative flex flex-col p-6 sm:p-8">
           <button onClick={onClose} aria-label="Close project details" className="absolute right-5 top-4 rounded-button px-2 text-2xl text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">×</button>
           <h2 id="project-detail-title" className="text-heading-black pr-10 text-2xl sm:text-3xl">{project.title}</h2>
+          {project.proof && <p className="mt-4 w-fit rounded-button bg-primary px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wide text-bg">{project.proof}</p>}
           {project.categories?.length ? <p className="text-eyebrow mt-3">{project.categories.join(" · ")} project</p> : null}
           {project.stack?.length ? <div className="mt-7"><h3 className="text-sm font-bold text-primary">Tools</h3><div className="mt-3 flex flex-wrap gap-2">{project.stack.map(item => <span key={item} className="rounded-pill border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-primary">{item}</span>)}</div></div> : null}
           {(project.externalUrl || project.repositoryUrl || project.demoUrl) && <div className="mt-7 flex items-center gap-2 whitespace-nowrap">

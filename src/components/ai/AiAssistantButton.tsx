@@ -4,18 +4,21 @@ import { useEffect, useState } from "react";
 import { markFeatureUsed } from "@/lib/feature-hint";
 import { AiAssistantModal } from "./AiAssistantModal";
 
-const BADGE_STORAGE_KEY = "portfolio-ai-try-me-dismissed-v2";
+const BADGE_STORAGE_KEY = "portfolio-ai-try-me-dismissed-session-v1";
 
 export function AiAssistantButton({ showTryMe = true }: { showTryMe?: boolean }) {
   const [open, setOpen] = useState(false);
   const [showBadge, setShowBadge] = useState(false);
 
   useEffect(() => {
+    let dismissed = false;
     try {
-      setShowBadge(showTryMe && window.localStorage.getItem(BADGE_STORAGE_KEY) !== "true");
+      dismissed = window.sessionStorage.getItem(BADGE_STORAGE_KEY) === "true";
     } catch {
-      setShowBadge(showTryMe);
+      // Keep the invitation available when session storage is unavailable.
     }
+    const timer = showTryMe && !dismissed ? window.setTimeout(() => setShowBadge(true), 1800) : undefined;
+    return () => { if (timer !== undefined) window.clearTimeout(timer); };
   }, [showTryMe]);
 
   const openAssistant = () => {
@@ -23,7 +26,7 @@ export function AiAssistantButton({ showTryMe = true }: { showTryMe?: boolean })
     setShowBadge(false);
     markFeatureUsed();
     try {
-      window.localStorage.setItem(BADGE_STORAGE_KEY, "true");
+      window.sessionStorage.setItem(BADGE_STORAGE_KEY, "true");
     } catch {
       // The badge still disappears for this visit when storage is unavailable.
     }

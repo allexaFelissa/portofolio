@@ -26,6 +26,7 @@ export function Projects({ projects, heading }: { projects: Project[]; heading: 
                 <img src={project.thumbnail.src} alt={project.thumbnail.alt} onError={event => { event.currentTarget.src = "/placeholder-project.svg"; }} className="size-full object-cover transition duration-300 group-hover:scale-105 motion-reduce:transition-none" />
               </div>
               <div className="flex flex-1 flex-col p-6">
+                {project.proof && <p className="mb-3 w-fit rounded-button bg-primary px-3 py-1 text-[10px] font-extrabold uppercase tracking-wide text-bg">{project.proof}</p>}
                 <h3 className="text-heading line-clamp-2 min-h-14 text-xl leading-7">{project.title}</h3>
                 {project.description && <p className="text-body mt-3 line-clamp-3 text-sm leading-6">{project.description}</p>}
                 {project.stack?.length ? <div className="mt-4 flex flex-wrap gap-1.5">{project.stack.slice(0, 4).map(item => <span key={item} className="rounded-button border border-border bg-surface px-2.5 py-1 text-[10px] font-semibold text-primary">{item}</span>)}{project.stack.length > 4 && <span className="rounded-button border border-border bg-surface px-2.5 py-1 text-[10px] font-semibold text-muted">+{project.stack.length - 4} more</span>}</div> : null}

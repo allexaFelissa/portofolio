@@ -77,6 +77,7 @@ export interface Project {
   repositoryUrl?: string;
   demoUrl?: string;
   categories?: Array<"Data" | "AI" | "Web">;
+  proof?: string;
 }
 
 export interface MarqueeContent {
