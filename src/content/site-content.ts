@@ -21,7 +21,7 @@ export const siteContent: SiteContent = {
       { platform: "LinkedIn", url: "https://www.linkedin.com/in/allexandra-felissa-tioputri-ab7b71325", iconAlt: "Allexa's LinkedIn profile" },
       { platform: "Instagram", url: "https://www.instagram.com/allexa.felissa?stkn=MThkNWlrdmhzOGFwag==", iconAlt: "Allexa's Instagram profile" },
     ],
-    cvFile: "/Allexandra-Felissa-CV.pdf",
+    cvFile: "/CV_Allexandra-Felissa-T.pdf",
   },
   about: {
     eyebrow: "DISCOVER",
