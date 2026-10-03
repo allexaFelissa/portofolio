@@ -7,7 +7,6 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { ProjectGallery } from "./ProjectGallery";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { LanguageToggle } from "@/components/layout/LanguageToggle";
-import { AiAssistantButton } from "@/components/ai/AiAssistantButton";
 
 export function ProjectsPageContent() {
   const { language } = useLanguage();
@@ -21,6 +20,5 @@ export function ProjectsPageContent() {
       <div className="flex items-center gap-1.5"><LanguageToggle /><ThemeToggle /></div>
     </header>
     <main className="projects-catalog min-h-screen bg-bg/80 px-5 pb-20 pt-24 dark:bg-bg/55 sm:px-8 lg:px-10"><div className="mx-auto max-w-6xl"><header className="mb-9 pt-4 sm:mb-11"><h1 className="text-heading-black max-w-3xl text-3xl leading-tight sm:text-4xl">{id ? "Semua Karya" : "All Projects"}</h1></header><ProjectGallery projects={content.projects} /></div></main>
-    <AiAssistantButton showTryMe={false} />
   </>;
 }

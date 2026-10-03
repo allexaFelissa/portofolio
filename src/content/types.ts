@@ -93,15 +93,3 @@ export interface SiteContent {
   projects: Project[];
   sectionHeadings: Record<string, { eyebrow?: string; heading?: string }>;
 }
-
-/** Server-side grounding text for the AI assistant. */
-export interface KnowledgeBase {
-  facts: string;
-  sections?: KnowledgeSection[];
-}
-
-export interface KnowledgeSection {
-  id: string;
-  keywords: string[];
-  content: string;
-}

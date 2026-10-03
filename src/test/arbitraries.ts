@@ -242,11 +242,3 @@ export const siteContentArb = (): fc.Arbitrary<SiteContentGen> =>
       })
     ),
   });
-
-// ---- Knowledge_Base ----
-
-export interface KnowledgeBaseGen {
-  facts: string;
-}
-export const knowledgeBaseArb = (): fc.Arbitrary<KnowledgeBaseGen> =>
-  fc.record({ facts: boundedString(0, 2000) });
